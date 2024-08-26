@@ -47,7 +47,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-08-13 16:13:12',
+  postUpdate: '2024-08-26 22:40:37',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -826,14 +826,22 @@ if (true) {
 </ol>
 <h2 id="Mybatis工作原理"><a href="#Mybatis工作原理" class="headerlink" title="Mybatis工作原理"></a>Mybatis工作原理</h2><p>mybatis工作原理<br>MyBatis框架在操作数据库时，大体经过了8个步骤。下面结合MyBatis工作原理图对每一步流程进行详细讲解，具体如下。</p>
 <ol>
-<li>MyBatis读取核心配置文件mybatis-config.xml: mybatis-config.xml核心配置文件主要配置了MyBatis的运行环境等信息。</li>
-<li>加载映射文件Mapper.xml: Mapper.xml文件即SQL映射文件，该文件配置了操作数据库的SQL语句，需要在mybatis-config.xml中加载才能执行。</li>
-<li>构造会话工厂:通过MyBatis的环境等配置信息构建会话工厂SqlSessionFactory，用于创建SqlSession。</li>
-<li>创建会话对象:由会话工厂SqlSessionFactory创建SqlSession对象，该对象中包含了执行SQL语句的所有方法。</li>
-<li>创建执行器:会话对象本身不能直接操作数据库，MyBatis底层定义了一个Executor接口用于操作数据库，执行器会根据SqlSession传递的参数动态的生成需要执行的SQL语句，同时负责查询缓存地维护。</li>
-<li>封装SQL信息: SqlSession内部通过执行器Executor操作数据库，执行器将待处理的SQL信息封装到MappedStatement对象中。</li>
-<li>操作数据库:根据动态生成的SQL操作数据库。</li>
-<li>输出结果映射:执行SQL语句之后，通过MappedStatement对象将输出结果映射至Java对象中。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/y55.png"></li>
+<li><p>MyBatis读取核心配置文件mybatis-config.xml: mybatis-config.xml核心配置文件主要配置了MyBatis的运行环境等信息。</p>
+</li>
+<li><p>加载映射文件Mapper.xml: Mapper.xml文件即SQL映射文件，该文件配置了操作数据库的SQL语句，需要在mybatis-config.xml中加载才能执行。</p>
+</li>
+<li><p>构造会话工厂:通过MyBatis的环境等配置信息构建会话工厂SqlSessionFactory，用于创建SqlSession。</p>
+</li>
+<li><p>创建会话对象:由会话工厂SqlSessionFactory创建SqlSession对象，该对象中包含了执行SQL语句的所有方法。</p>
+</li>
+<li><p>创建执行器:会话对象本身不能直接操作数据库，MyBatis底层定义了一个Executor接口用于操作数据库，执行器会根据SqlSession传递的参数动态的生成需要执行的SQL语句，同时负责查询缓存地维护。</p>
+</li>
+<li><p>封装SQL信息: SqlSession内部通过执行器Executor操作数据库，执行器将待处理的SQL信息封装到MappedStatement对象中。</p>
+</li>
+<li><p>操作数据库:根据动态生成的SQL操作数据库。</p>
+</li>
+<li><p>输出结果映射:执行SQL语句之后，通过MappedStatement对象将输出结果映射至Java对象中。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/y55.png"></p>
+</li>
 </ol>
 <h2 id="SqlSessionFactoryBuilder对象"><a href="#SqlSessionFactoryBuilder对象" class="headerlink" title="SqlSessionFactoryBuilder对象"></a>SqlSessionFactoryBuilder对象</h2><ol>
 <li>形式一: SqlSessionFactoryBuilder构建build()方法</li>
