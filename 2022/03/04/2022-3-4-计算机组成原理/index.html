@@ -1,0 +1,2049 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>计算机组成原理 | Smith</title><meta name="keywords" content="计算机组成原理"><meta name="author" content="Smith"><meta name="copyright" content="Smith"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="计算机组成原理"><meta name="application-name" content="计算机组成原理"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="计算机组成原理"><meta property="og:url" content="https://smithhs.cn/2022/03/04/2022-3-4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html"><meta property="og:site_name" content="Smith"><meta property="og:description" content="计算机组成原理  1.计算机系统概述  1. 计算机发展历程 2.计算机系统的组成 3.存储器 4.运算器 5. 控制器 6. 计算机的工作过程（重点） 7. 计算机的层次结构 8.计算机的性能指标  1. 存储器 2. CPU 3.系统整体的性能指标 4. 思考     2. 数据的表示和运算"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/data-structure.png"><meta property="article:author" content="Smith"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/data-structure.png"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://smithhs.cn/2022/03/04/2022-3-4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//npm.onmicrosoft.cn"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.14/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":240},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机组成原理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-03 19:15:49',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/d20f536c64d06e5fcf4bfe2ec5dc25d.jpg"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>if (GLOBAL_CONFIG.preloader.source == "2" || GLOBAL_CONFIG.preloader.source == "3") {
+  const loadingPercentage = document.getElementById("loading-percentage");
+  let loadingPercentageTimer = setInterval(function() {
+    var progressBar = document.querySelector(".pace-progress");
+    if (!progressBar) return
+    var currentValue = progressBar.getAttribute("data-progress-text");
+    if (currentValue !== loadingPercentage.textContent) {
+      loadingPercentage.textContent = currentValue;
+      if (currentValue === "100%") {
+        clearInterval(loadingPercentageTimer);
+      }
+    }
+  }, 100);
+}
+
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://smithhs.cn/" title="博客" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" href="http://robot.onliu.cn/" title="Robot" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/cupfox.png" alt="Robot"/><span class="back-menu-item-text">Robot</span></a><a class="back-menu-item" href="http://res.onliu.cn" title="Sale" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://alandodo-1315761622.cos.ap-beijing.myqcloud.com/blog-tuce/tubiao.jpg" alt="Sale"/><span class="back-menu-item-text">Sale</span></a><a class="back-menu-item" href="http://se.onliu.cn/" title="资源共享" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://alandodo-1315761622.cos.ap-beijing.myqcloud.com/blog/x126.png" alt="资源共享"/><span class="back-menu-item-text">资源共享</span></a><a class="back-menu-item" href="https://github.com/Smithhss" title="Github" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/GitHub.png" alt="Github"/><span class="back-menu-item-text">Github</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">Smith</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于我</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/1.jpg" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/1.jpg"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/2.jpg" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/2.jpg"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Android-Studio/" style="font-size: 1.05rem;">Android Studio<sup>1</sup></a><a href="/tags/App/" style="font-size: 1.05rem;">App<sup>2</sup></a><a href="/tags/C/" style="font-size: 1.05rem;">C++<sup>1</sup></a><a href="/tags/Easypan/" style="font-size: 1.05rem;">Easypan<sup>2</sup></a><a href="/tags/GPT/" style="font-size: 1.05rem;">GPT<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 1.05rem;">Hexo<sup>1</sup></a><a href="/tags/Java/" style="font-size: 1.05rem;">Java<sup>6</sup></a><a href="/tags/JavaWeb/" style="font-size: 1.05rem;">JavaWeb<sup>2</sup></a><a href="/tags/Jrebel/" style="font-size: 1.05rem;">Jrebel<sup>1</sup></a><a href="/tags/LeetCode/" style="font-size: 1.05rem;">LeetCode<sup>1</sup></a><a href="/tags/MyBatis/" style="font-size: 1.05rem;">MyBatis<sup>1</sup></a><a href="/tags/Mysql/" style="font-size: 1.05rem;">Mysql<sup>1</sup></a><a href="/tags/Navicat/" style="font-size: 1.05rem;">Navicat<sup>1</sup></a><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>1</sup></a><a href="/tags/SSM/" style="font-size: 1.05rem;">SSM<sup>1</sup></a><a href="/tags/Spring/" style="font-size: 1.05rem;">Spring<sup>2</sup></a><a href="/tags/SpringMVC/" style="font-size: 1.05rem;">SpringMVC<sup>1</sup></a><a href="/tags/URDF/" style="font-size: 1.05rem;">URDF<sup>1</sup></a><a href="/tags/VMware/" style="font-size: 1.05rem;">VMware<sup>1</sup></a><a href="/tags/WeChat/" style="font-size: 1.05rem;">WeChat<sup>1</sup></a><a href="/tags/YouHou/" style="font-size: 1.05rem;">YouHou<sup>1</sup></a><a href="/tags/books/" style="font-size: 1.05rem;">books<sup>1</sup></a><a href="/tags/butterfly/" style="font-size: 1.05rem;">butterfly<sup>1</sup></a><a href="/tags/clash/" style="font-size: 1.05rem;">clash<sup>1</sup></a><a href="/tags/error/" style="font-size: 1.05rem;">error<sup>1</sup></a><a href="/tags/music/" style="font-size: 1.05rem;">music<sup>1</sup></a><a href="/tags/project/" style="font-size: 1.05rem;">project<sup>2</sup></a><a href="/tags/ssm/" style="font-size: 1.05rem;">ssm<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.05rem;">前端<sup>1</sup></a><a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 1.05rem;">嵌入式<sup>2</sup></a><a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 1.05rem;">开发环境<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">数据结构与算法<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 1.05rem;">计算机组成原理<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">16</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="anzhiyu.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/Programming/">Programming</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" tabindex="-1"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>计算机组成原理</span></a></span></div></div><h1 class="post-title">计算机组成原理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="post-meta-icon anzhiyufont anzhiyu-icon-calendar-days"></i><span class="post-meta-label">发表于</span><time datetime="2022-03-04T06:21:00.000Z" title="发表于 2022-03-04 14:21:00">2022-03-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">3.2k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="计算机组成原理"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为石家庄"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>石家庄</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/data-structure.png"></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86&spm=1001.2101.3001.7020">计算机组成原理</a></h4><ul>
+<li><ul>
+<li><a href="#1_1">1.计算机系统概述</a></li>
+<li><ul>
+<li><a href="#1__3">1. 计算机发展历程</a></li>
+<li><a href="#2_7">2.计算机系统的组成</a></li>
+<li><a href="#3_25">3.存储器</a></li>
+<li><a href="#4_42">4.运算器</a></li>
+<li><a href="#5__46">5. 控制器</a></li>
+<li><a href="#6__50">6. 计算机的工作过程（重点）</a></li>
+<li><a href="#7__68">7. 计算机的层次结构</a></li>
+<li><a href="#8_80">8.计算机的性能指标</a></li>
+<li><ul>
+<li><a href="#1__82">1. 存储器</a></li>
+<li><a href="#2_CPU_86">2. CPU</a></li>
+<li><a href="#3_96">3.系统整体的性能指标</a></li>
+<li><a href="#4__100">4. 思考</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#2__104">2. 数据的表示和运算</a></li>
+<li><ul>
+<li><a href="#1_106">1.进位计数制</a></li>
+<li><a href="#2BCD_132">2.BCD码</a></li>
+<li><a href="#3__153">3. 字符与字符串</a></li>
+<li><a href="#4_171">4.奇偶校验码</a></li>
+<li><a href="#5_185">5.海明码</a></li>
+<li><a href="#6_CRC_204">6. 循环冗余校验码（CRC码）</a></li>
+<li><a href="#7__220">7. 定点数的表示</a></li>
+<li><a href="#8_254">8.移位运算</a></li>
+<li><a href="#9__276">9. 溢出判断</a></li>
+<li><a href="#10_284">10.原码乘法运算</a></li>
+<li><a href="#11_290">11.补码乘法运算</a></li>
+<li><a href="#12_300">12.原码除法运算</a></li>
+<li><a href="#13_314">13.补码除法运算</a></li>
+<li><a href="#14_318">14.强制类型转换</a></li>
+<li><a href="#15_322">15.数据的存储和排列</a></li>
+<li><a href="#16__332">16. 浮点数的表示</a></li>
+<li><a href="#17_IEEE_754__344">17. IEEE 754 浮点数标准</a></li>
+<li><a href="#18_366">18.浮点数的运算</a></li>
+<li><a href="#19__384">19. 电路的基本原理</a></li>
+</ul>
+</li>
+<li><a href="#3_394">3.存储系统</a></li>
+<li><ul>
+<li><a href="#1__396">1. 主存简单模型和寻址概念</a></li>
+<li><a href="#2RAM_406">2.存储器RAM</a></li>
+<li><a href="#3ROM_416">3.ROM(只读存储器)</a></li>
+<li><a href="#4_424">4.存储器基本概念</a></li>
+<li><a href="#5_CPU_442">5. 主存与CPU的连接</a></li>
+<li><a href="#6CPU_459">6.主存与CPU的连接（例题）</a></li>
+<li><a href="#7RAM_469">7.双端口RAM和多模块存储器</a></li>
+<li><a href="#8_487">8.局部性原理及性能分析</a></li>
+<li><a href="#9_Cache__501">9. Cache 地址映射</a></li>
+<li><a href="#10cache_519">10.cache替换算法及写策略</a></li>
+<li><a href="#11__551">11. 虚拟存储器</a></li>
+</ul>
+</li>
+<li><a href="#4_573">4.指令系统</a></li>
+<li><ul>
+<li><a href="#1_575">1.指令格式</a></li>
+<li><a href="#2_605">2.指令寻址</a></li>
+<li><a href="#31_615">3.数据寻址1</a></li>
+<li><a href="#42_657">4.数据寻址2——偏移寻址</a></li>
+<li><a href="#5__679">5. 数据寻址——堆栈寻址</a></li>
+<li><a href="#6CISCRISC_683">6.CISC和RISC</a></li>
+</ul>
+</li>
+<li><a href="#5_693">5.中央处理器</a></li>
+<li><ul>
+<li><a href="#1CPU_695">1.CPU功能和基本结构</a></li>
+<li><a href="#2_719">2.指令周期的数据流</a></li>
+<li><a href="#3_1CPU_745">3. 数据通路1——CPU内部单总线通路</a></li>
+<li><a href="#4_2_775">4. 数据通路2——专用数据通路</a></li>
+<li><a href="#5_1_807">5. 控制器1——硬布线</a></li>
+<li><a href="#62_821">6.控制器2——微程序</a></li>
+<li><a href="#7_873">7.指令流水线的概念及性能指标</a></li>
+<li><a href="#8_899">8.影响流水线的因素及分类</a></li>
+</ul>
+</li>
+<li><a href="#6_955">6.总线</a></li>
+<li><ul>
+<li><a href="#1_957">1.总线的概念和分类</a></li>
+<li><a href="#2_993">2.性能指标</a></li>
+<li><a href="#3__1013">3. 总线仲裁</a></li>
+<li><a href="#4__1041">4. 总线操作和定时</a></li>
+<li><a href="#5__1069">5. 总线标准</a></li>
+</ul>
+</li>
+<li><a href="#7__1075">7. 输入输出系统</a></li>
+<li><ul>
+<li><a href="#1_IO_1077">1. IO系统基本概念</a></li>
+<li><a href="#2__1091">2. 输入输出</a></li>
+<li><a href="#3__1101">3. 外存储器</a></li>
+<li><a href="#4_IO_1125">4. IO接口</a></li>
+<li><a href="#5__1147">5. 程序查询方式</a></li>
+<li><a href="#6__1165">6. 中断系统</a></li>
+<li><a href="#7__1211">7. 程序中断方式</a></li>
+<li><a href="#8_DMA_1229">8. DMA方式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-计算机系统概述"><a href="#1-计算机系统概述" class="headerlink" title="1.计算机系统概述"></a>1.<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F&spm=1001.2101.3001.7020">计算机系统</a>概述</h3><h4 id="1-计算机发展历程"><a href="#1-计算机发展历程" class="headerlink" title="1. 计算机发展历程"></a>1. 计算机发展历程</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6a3ac6d4a7cc398b861b5a958cde66a7.png" alt="image-20220124155140426"></p>
+<h4 id="2-计算机系统的组成"><a href="#2-计算机系统的组成" class="headerlink" title="2.计算机系统的组成"></a>2.计算机系统的组成</h4><ul>
+<li>冯诺依曼体系结构：以运算器为核心</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3dbc15f7223b0ceb2d0aab2898c2a1df.png" alt="image-20220124155439445"></p>
+<ul>
+<li>冯诺依曼体系结构的特点</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/45053bad23403685a8bbbc59225dd6ca.png" alt="image-20220124163921396"></p>
+<ul>
+<li>现在计算机体系结构：以内存为核心</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/36fa95c0cfcdfd39c51de2cc4dd0a0ef.png" alt="image-20220124155514424"></p>
+<ul>
+<li>CPU，主机，外设</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/064d486e4479dfde28fa7f5f1cfa7515.png" alt="image-20220124155601121"></p>
+<h4 id="3-存储器"><a href="#3-存储器" class="headerlink" title="3.存储器"></a>3.存储器</h4><ul>
+<li>主存储器由存储体，MAR，MDR组成</li>
+<li>和右边的图进行类比，MAR存储CPU想要获取数据的地址，在存储体中找到后放在MDR中，CPU从MDR中把数据取走。</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/de53bb3ce0831704668e2aba86b56b78.png" alt="image-20220124161217722"></p>
+<ul>
+<li><p>存储体是由一个个存储单元组成的</p>
+</li>
+<li><p>存储字：存储单元中二进制代码的集合</p>
+</li>
+<li><p>存储字长：存储单元中二进制代码的位数</p>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d2616ce7b59a21304023c49fff6bce65.png" alt="image-20220124161625621"></p>
+<h4 id="4-运算器"><a href="#4-运算器" class="headerlink" title="4.运算器"></a>4.<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%BF%90%E7%AE%97%E5%99%A8&spm=1001.2101.3001.7020">运算器</a></h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d880575687fe39635e0eace507fec232.png" alt="image-20220124162029858"></p>
+<h4 id="5-控制器"><a href="#5-控制器" class="headerlink" title="5. 控制器"></a>5. 控制器</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/8ed0541a9c5647b0f443e8f5f2fd826f.png" alt="image-20220124162149845"></p>
+<h4 id="6-计算机的工作过程（重点）"><a href="#6-计算机的工作过程（重点）" class="headerlink" title="6. 计算机的工作过程（重点）"></a>6. 计算机的工作过程（重点）</h4><ul>
+<li>程序被编译成二进制存储在主存中</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5137288e6e058f17554a4852072f1c31.png" alt="image-20220124162251737"></p>
+<blockquote>
+<p>工作过程</p>
+</blockquote>
+<ul>
+<li><p>（MAR）：表示MAR里边的值为0</p>
+</li>
+<li><p>M(MAR) ：主存储器所指向的存储单元里边的值</p>
+</li>
+<li><p>OP（IR）：取操作码</p>
+</li>
+<li><p>Ad（IR）：取地址码</p>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/51d5488ab4b38d51f0586782a9815f2a.png" alt="image-20220124162438267"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3970e07f7afcb9fe5f3c6da61df509ed.png" alt="image-20220124163303409"></p>
+<h4 id="7-计算机的层次结构"><a href="#7-计算机的层次结构" class="headerlink" title="7. 计算机的层次结构"></a>7. 计算机的层次结构</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6e77b4804c1e88d8c27319ceb1c39bfe.png" alt="image-20220124164821189"></p>
+<ul>
+<li>注意编译程序和解释程序的区别</li>
+</ul>
+<p>编译程序:将高级语言编写的源程序全部语句一次全部翻译成机器语言程序，而后再执行机器语言程序（只需翻译一次)</p>
+<p>解释程序将源程序的一条语句翻译成对应于机器语言的语句，并立即执行。紧接着再翻译下一句(每次执行都要翻译)</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/98013974406375682a181473a5c9813f.png" alt="image-20220124164939418"></p>
+<h4 id="8-计算机的性能指标"><a href="#8-计算机的性能指标" class="headerlink" title="8.计算机的性能指标"></a>8.计算机的性能指标</h4><h5 id="1-存储器"><a href="#1-存储器" class="headerlink" title="1. 存储器"></a>1. 存储器</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ccb50145a2669b0336096a393b98865b.png" alt="image-20220124165253241"></p>
+<h5 id="2-CPU"><a href="#2-CPU" class="headerlink" title="2. CPU"></a>2. CPU</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/85a7c6b64f0cc49fb8e9580941c8e60e.png" alt="image-20220124170445476"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ca2a0a49be8625c47a2ed11d762a8c24.png" alt="image-20220124170634769"></p>
+<h5 id="3-系统整体的性能指标"><a href="#3-系统整体的性能指标" class="headerlink" title="3.系统整体的性能指标"></a>3.系统整体的性能指标</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/9c6797849857fcf1fc5aa41cb4ce1913.png" alt="image-20220124170834659"></p>
+<h5 id="4-思考"><a href="#4-思考" class="headerlink" title="4. 思考"></a>4. 思考</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5a55cebc806a569d5fc36cdacfa208a0.png" alt="image-20220124171228641"></p>
+<h3 id="2-数据的表示和运算"><a href="#2-数据的表示和运算" class="headerlink" title="2. 数据的表示和运算"></a>2. 数据的表示和运算</h3><h4 id="1-进位计数制"><a href="#1-进位计数制" class="headerlink" title="1.进位计数制"></a>1.进位计数制</h4><ul>
+<li>其他进制转十进制</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/db2df9b96f8a8e49909c96365f2f26d1.png" alt="image-20220124172254378"></p>
+<ul>
+<li>二进制&lt;——&gt; 八进制，十六进制 (注意：小数部分也是从右往左算)</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/53fcd78e4427f2fcff5bfed46c43b2cc.png" alt="image-20220124172619709"></p>
+<ul>
+<li>十进制——&gt;任意进制（整数部分）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/20871b3768dc473e7742a787a62c51a4.png" alt="image-20220124192353762"></p>
+<ul>
+<li>十进制——&gt;任意进制（小数部分）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6fc22da1fac3ca523a534b68b70ecde2.png" alt="image-20220124192439652"></p>
+<ul>
+<li>十进制转二进制（拼凑法，适用于十进制数不是很大的情况）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/4fccda6ccc175b4f303736b89388444c.png" alt="image-20220124192728894"></p>
+<ul>
+<li>真值和机器数</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/157a9da711bebd8970e18a01345dbcae.png" alt="image-20220124192704256"></p>
+<h4 id="2-BCD码"><a href="#2-BCD码" class="headerlink" title="2.BCD码"></a>2.BCD码</h4><ul>
+<li>概念</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/c6c74c4890db474fd2cf601bb7352236.png" alt="image-20220126171803519"></p>
+<ul>
+<li>8421码</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/c7173dec82fdbdedba761e0ef0fa3143.png" alt="image-20220126171920070"></p>
+<ul>
+<li>8421码相加</li>
+</ul>
+<ol>
+<li>可以转换成十进制相加后，再转换成8421码</li>
+<li>机算方法：不在范围内，加6。如图所示</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/4c3676d92d12695580f48c9ad8f5afd5.png" alt="image-20220126172432712"></p>
+<ul>
+<li>其他表示方式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ce079123b4e2e3a7e088d73b5b35f80f.png" alt="image-20220126174706248"></p>
+<h4 id="3-字符与字符串"><a href="#3-字符与字符串" class="headerlink" title="3. 字符与字符串"></a>3. 字符与字符串</h4><ul>
+<li>ASCII码</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5cca8297757101f08583220797862190.png" alt="image-20220126180204687"></p>
+<ul>
+<li>汉字的表示和编码</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/acf0099eb68fc9a6bf1b790740e4c9dd.png" alt="image-20220126180314162"></p>
+<ul>
+<li>字符串的表示形式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/bcfe72bf0aada80620e6bdc25444660f.png" alt="image-20220126180403191"></p>
+<ul>
+<li>知识回顾</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a4bde1f135eb2e5c939464bc59b1616d.png" alt="image-20220126180437047"></p>
+<h4 id="4-奇偶校验码"><a href="#4-奇偶校验码" class="headerlink" title="4.奇偶校验码"></a>4.奇偶校验码</h4><ul>
+<li>校验原理</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/137f90d99069a78a8ee350a0a18894cd.png" alt="image-20220126180907544"></p>
+<ul>
+<li>奇偶校验码</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5fea04e4843da405d8cedef8adf3750d.png" alt="image-20220126181124538"></p>
+<ul>
+<li>硬件实现</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/8a4d304ab60a1816f96a15ac90632a63.png" alt="image-20220126192604899"></p>
+<h4 id="5-海明码"><a href="#5-海明码" class="headerlink" title="5.海明码"></a>5.海明码</h4><ul>
+<li>设计思想</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/9f1f0b7b82f48873ef54ef62e756f12d.png" alt="image-20220126192014802"></p>
+<ul>
+<li>求解步骤</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e5e6a8091fe07c224d0538a42f207020.png" alt="image-20220126195838236"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a9a8aa725c389e23933812f204e8d59c.png" alt="image-20220126193248739"></p>
+<ul>
+<li>全校验</li>
+</ul>
+<ol>
+<li>海明码只能纠错一位（一个数据传错时，可以纠正）</li>
+<li>可以检错两位</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/b87b430db9deeb0046ea9356693b1625.png" alt="image-20220126195918658"></p>
+<h4 id="6-循环冗余校验码（CRC码）"><a href="#6-循环冗余校验码（CRC码）" class="headerlink" title="6. 循环冗余校验码（CRC码）"></a>6. 循环冗余校验码（CRC码）</h4><ul>
+<li>基本思想</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a7b8de46532ce7836224b8d14d1bbc92.png" alt="image-20220126200208426"></p>
+<ul>
+<li>例题</li>
+</ul>
+<p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-TxXHrXvO-1644306008648)(C:\Users\86155\AppData\Roaming\Typora\typora-user-images\image-20220126201152982.png)]</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/b170fe8c628a9f1665faf1852087de57.png" alt="image-20220126202544654"></p>
+<ul>
+<li>CRC校验码计算过程</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f8ae6f842ca98f22077e8180a1690d44.png" alt="image-20220126202718290"></p>
+<h4 id="7-定点数的表示"><a href="#7-定点数的表示" class="headerlink" title="7. 定点数的表示"></a>7. 定点数的表示</h4><ul>
+<li>定点数和浮点数的概念</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/dccd6cfee85a7680cf89fb7fb814556a.png" alt="image-20220127144253289"></p>
+<ul>
+<li>无符号数</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a2d5f1a188e486fdde8593e58dceaf52.png" alt="image-20220127144714178"></p>
+<ul>
+<li>原码</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/53cdee4bb87987546183e2275359a109.png" alt="image-20220127145309171"></p>
+<ul>
+<li>反码</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/826ec99ef9e313a6bde9e5b6fabdd71b.png" alt="image-20220127145448551"></p>
+<ul>
+<li>补码(高频考点)</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/24fcedc96d23b241e31a991c097df023.png" alt="image-20220127150050213"></p>
+<ul>
+<li>移码</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3332ab2efab5242d689d751001498f79.png" alt="image-20220127150230867"></p>
+<ul>
+<li>技巧</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/17a7f65fd13e379c39352ba1ec36b9e7.png" alt="image-20220127150633042"></p>
+<ul>
+<li>补码的作用（注意：执行加法运算时，符号位一起参加运算）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ed1aa0405f7e8f9920d9ca3d611b7326.png" alt="image-20220127152758634"></p>
+<h4 id="8-移位运算"><a href="#8-移位运算" class="headerlink" title="8.移位运算"></a>8.移位运算</h4><ul>
+<li>原码的算数移位</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/daff4b24026c89838389ecbb0d1f4741.png" alt="image-20220127153359639"></p>
+<ul>
+<li>反码的算数移位</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3fb0f33e872ff122ce9b5ce96c5db73c.png" alt="image-20220127153607298"></p>
+<ul>
+<li>补码的算数移位</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ab3698978247a9c5cfb2db86aca0e900.png" alt="image-20220127153830245"></p>
+<ul>
+<li>总结</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ca6d5b8bbdb0a522a7373d8f1fb5ef1f.png" alt="image-20220127153942017"></p>
+<ul>
+<li>逻辑移位</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/fb48ae29fd78842694add8dee54bf8e6.png" alt="image-20220127154131912"></p>
+<h4 id="9-溢出判断"><a href="#9-溢出判断" class="headerlink" title="9. 溢出判断"></a>9. 溢出判断</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/9d6f5f8d72137a623d47ee1cd8822fab.png" alt="image-20220127161103371"></p>
+<ul>
+<li>符号扩展</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/98ab930aca9418a98d459314a610b757.png" alt="image-20220127161325545"></p>
+<h4 id="10-原码乘法运算"><a href="#10-原码乘法运算" class="headerlink" title="10.原码乘法运算"></a>10.原码乘法运算</h4><ul>
+<li>机器实现（视频 P18节）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/38102a467ef2e1dd38167e008cb8cbc2.png" alt="image-20220127163743939"></p>
+<h4 id="11-补码乘法运算"><a href="#11-补码乘法运算" class="headerlink" title="11.补码乘法运算"></a>11.补码乘法运算</h4><ul>
+<li>机器实现</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5988b63d780d96eaf0369f569565c37f.png" alt="image-20220127215747197"></p>
+<ul>
+<li>手算步骤</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6a637a41f12d884f13d4768f12815872.png" alt="image-20220127215810158"></p>
+<h4 id="12-原码除法运算"><a href="#12-原码除法运算" class="headerlink" title="12.原码除法运算"></a>12.原码除法运算</h4><ul>
+<li>机器运算过程</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/84c1c6cb034c05b89c72da577e52af6e.png" alt="image-20220128125621231"></p>
+<ul>
+<li>恢复余数法</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f75584879642f33304bf6e70187bb253.png" alt="image-20220128131154037"></p>
+<ul>
+<li>加减交替法</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/cdbaadcacbd4467fe88c9e0589718381.png" alt="image-20220128131225276"></p>
+<h4 id="13-补码除法运算"><a href="#13-补码除法运算" class="headerlink" title="13.补码除法运算"></a>13.补码除法运算</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/01e83994fba1cba24190613cbda9146c.png" alt="image-20220128130246826"></p>
+<h4 id="14-强制类型转换"><a href="#14-强制类型转换" class="headerlink" title="14.强制类型转换"></a>14.强制类型转换</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/7dc48a3268ce4b8bf61adf16d4f399f3.png" alt="image-20220128131830289"></p>
+<h4 id="15-数据的存储和排列"><a href="#15-数据的存储和排列" class="headerlink" title="15.数据的存储和排列"></a>15.数据的存储和排列</h4><ul>
+<li>大小端模式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/cade9919aa9acaa5e610d9b5b1219702.png" alt="image-20220128132209812"></p>
+<ul>
+<li>边界对齐</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/9a6d28669dbee025600519e691ee7c53.png" alt="image-20220128141621511"></p>
+<h4 id="16-浮点数的表示"><a href="#16-浮点数的表示" class="headerlink" title="16. 浮点数的表示"></a>16. 浮点数的表示</h4><ul>
+<li>浮点数的表示</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/173dfa08945773a62b7d57e2d4ab238b.png" alt="image-20220128144507292"></p>
+<ul>
+<li>尾数的规格化</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d046e121e331ad0f9ed69be65b4791cc.png" alt="image-20220128144600960"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/8162ddd18cc92675571d13fa13628ad1.png" alt="image-20220128144703337"></p>
+<h4 id="17-IEEE-754-浮点数标准"><a href="#17-IEEE-754-浮点数标准" class="headerlink" title="17. IEEE 754 浮点数标准"></a>17. IEEE 754 浮点数标准</h4><ul>
+<li>标准</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/dfafaf856556e9ba9be313bfaae5492f.png" alt="image-20220128145831536"></p>
+<ul>
+<li>示例（十进制转换为浮点数）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ba6f5bc1c310794ed53705cfa6067e8d.png" alt="image-20220128150220191"></p>
+<ul>
+<li>示例（浮点数转换为十进制数）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/0c9679efcee7e3725574f5b466f586de.png" alt="image-20220128150436743"></p>
+<ul>
+<li>单精度浮点数表示的最大值，最小值</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/43b1967c5ac7ebdd14909e8b1a0edf88.png" alt="image-20220128150646292"></p>
+<ul>
+<li>特殊数值</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/be27fe746542bfe51bb56fadde5bf54d.png" alt="image-20220128151026706"></p>
+<h4 id="18-浮点数的运算"><a href="#18-浮点数的运算" class="headerlink" title="18.浮点数的运算"></a>18.浮点数的运算</h4><ul>
+<li>和十进制的科学计数法进行类比</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6410dfe2cd47cd225ccd8715cc5cfaf0.png" alt="image-20220128152136960"></p>
+<ul>
+<li>浮点数加减法（P26）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f4eecc3a26cb15fcf2b76932c037d17b.png" alt="image-20220128154425894"></p>
+<ul>
+<li>舍入</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ec45d8fc53777f0de8dcc02b2a9ed31e.png" alt="image-20220128155152407"></p>
+<ul>
+<li>强制类型转换</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/039a82791dd380eca8045fc9e4c82a7d.png" alt="image-20220128155130204"></p>
+<h4 id="19-电路的基本原理"><a href="#19-电路的基本原理" class="headerlink" title="19. 电路的基本原理"></a>19. 电路的基本原理</h4><ul>
+<li>基本的逻辑运算</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/0495cc6e7276d42c422a1b097a078dfa.png" alt="image-20220128160058822"></p>
+<ul>
+<li>复合逻辑</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/7ff3c670890a531c8751acb9cd8a373a.png" alt="image-20220128160542357"></p>
+<h3 id="3-存储系统"><a href="#3-存储系统" class="headerlink" title="3.存储系统"></a>3.存储系统</h3><h4 id="1-主存简单模型和寻址概念"><a href="#1-主存简单模型和寻址概念" class="headerlink" title="1. 主存简单模型和寻址概念"></a>1. 主存简单模型和寻址概念</h4><ul>
+<li>存储器芯片的基本结构</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/2ced4cfb782bf63b05eccbc1d8c06315.png" alt="image-20220130152344905"></p>
+<ul>
+<li>寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f7239d5c04b971b59677b5d71e3c4c44.png" alt="image-20220130153001312"></p>
+<h4 id="2-存储器RAM"><a href="#2-存储器RAM" class="headerlink" title="2.存储器RAM"></a>2.存储器RAM</h4><ul>
+<li>两种RAM的比较</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3918268243d42a9eb6548c45fc7ce50e.png" alt="image-20220130154140182"></p>
+<ul>
+<li>DRAM的刷新<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/4b7d905c43fad0d059f867045e3a1179.png" alt="image-20220130154625070"></li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/beb3bc9776da9f1ef55965109c91dd07.png" alt="image-20220130155833007"></p>
+<h4 id="3-ROM-只读存储器"><a href="#3-ROM-只读存储器" class="headerlink" title="3.ROM(只读存储器)"></a>3.ROM(只读存储器)</h4><ul>
+<li>为什么需要ROM？</li>
+</ul>
+<p>因为RAM里面的数据容易丢失。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ec581359f08f85fdbc1354ad5fbee8da.png" alt="image-20220130160929183"></p>
+<h4 id="4-存储器基本概念"><a href="#4-存储器基本概念" class="headerlink" title="4.存储器基本概念"></a>4.存储器基本概念</h4><ul>
+<li>存储器的分类</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/784103d78110ea1384dcc32f6754a721.png" alt="image-20220130161242889"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5d6f9a9d4fe0dcc408356f3f00de8ce5.png" alt="image-20220130161406470"></p>
+<ul>
+<li>性能指标</li>
+</ul>
+<p>数据的宽度：在一个存储周期中存储的位数</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/da17f14e7ef3598d9069be65365ff9b0.png" alt="image-20220130161648937"></p>
+<ul>
+<li>层次化结构</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/027207693371e62ca9b63ae780fd702f.png" alt="image-20220130161822725"></p>
+<h4 id="5-主存与CPU的连接"><a href="#5-主存与CPU的连接" class="headerlink" title="5. 主存与CPU的连接"></a>5. 主存与CPU的连接</h4><ul>
+<li>CS：片选线（决定主存是否工作）这种写法是高电平有效</li>
+<li>WE：读写控制线</li>
+<li>A0~A13：地址线</li>
+<li>D0~D7：数据线</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/10d12c21d343c26a4e7b4211d4af1592.png" alt="image-20220130162636865"></p>
+<ul>
+<li>译码器</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/b50724f9105bac69f85462fe7646c77a.png" alt="image-20220130163242147"></p>
+<ul>
+<li>线选法和译码线选法的区别</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/23b6c7ef8ec7fc39f8d05fc430ff90f6.png" alt="image-20220130164058401"></p>
+<h4 id="6-主存与CPU的连接（例题）"><a href="#6-主存与CPU的连接（例题）" class="headerlink" title="6.主存与CPU的连接（例题）"></a>6.主存与CPU的连接（例题）</h4><ul>
+<li>分析</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3c10be67ea553d48a5b9adc32124a438.png" alt="image-20220130165155365"></p>
+<ul>
+<li>图解</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/70b5d6adc562b6080de2964d20fb2c10.png" alt="image-20220130165622310"></p>
+<h4 id="7-双端口RAM和多模块存储器"><a href="#7-双端口RAM和多模块存储器" class="headerlink" title="7.双端口RAM和多模块存储器"></a>7.双端口RAM和多模块存储器</h4><ul>
+<li>双端口RAM</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/32cf979a35b13d9704c6add5072d5546.png" alt="image-20220130170115628"></p>
+<ul>
+<li>多模块存储器</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f0b8cfd7e2baa2054696935bc95f9d3f.png" alt="image-20220130170354942"></p>
+<ul>
+<li>高位交叉编址和低位交叉编址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/c50c070edb7c1c96390b118247dbe355.png" alt="image-20220130171004832"></p>
+<ul>
+<li>流水线问题</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5e8eef153b270d3d191116096e3b1e76.png" alt="image-20220130171717868"></p>
+<h4 id="8-局部性原理及性能分析"><a href="#8-局部性原理及性能分析" class="headerlink" title="8.局部性原理及性能分析"></a>8.局部性原理及性能分析</h4><ul>
+<li>局部性原理</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3b5ed6372a7710a1959e47512d0fa8d3.png" alt="image-20220130173154035"></p>
+<ul>
+<li>性能分析</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e3de5c67c21fbd31e574ecda3d959482.png" alt="image-20220130173324687"></p>
+<ul>
+<li>例题（蓝色字体为答案）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/9fe9ab72d0d1ba7a59005b233d190cfa.png" alt="image-20220130173700544"></p>
+<h4 id="9-Cache-地址映射"><a href="#9-Cache-地址映射" class="headerlink" title="9. Cache 地址映射"></a>9. Cache 地址映射</h4><ul>
+<li>Cache的工作原理</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/409d57c09d16768bb09d9eb955f9460f.png" alt="image-20220131103221888"></p>
+<ul>
+<li>地址映射——全相连映射</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f232a03b731ec7182dc240748a053b8f.png" alt="image-20220131103738879"></p>
+<ul>
+<li>地址映射——直接映射</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ac486791f29aee9cb88f50989a9d4ff7.png" alt="image-20220131104100785"></p>
+<ul>
+<li>地址映射——组相连映射</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3060d51cd8ffe7060bf047a15da1b81d.png" alt="image-20220131104445504"></p>
+<h4 id="10-cache替换算法及写策略"><a href="#10-cache替换算法及写策略" class="headerlink" title="10.cache替换算法及写策略"></a>10.cache替换算法及写策略</h4><ul>
+<li>替换算法</li>
+</ul>
+<p>LRU侧重于近期表现，LFU侧重于全局表现</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/7c3c80fda5b7bc00952c4d79009077b4.png" alt="image-20220131105043802"></p>
+<ul>
+<li>例题</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/8ebfc5bf265fb13b1dce25350b75f0fc.png" alt="image-20220131110126624"></p>
+<ul>
+<li>命中时的写策略</li>
+</ul>
+<ol>
+<li>写回法</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/03b482e416f4d39444168da7a79fec43.png" alt="image-20220131110455683"></p>
+<ol start="2">
+<li>全写法</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/1b1904f0c9998e7e9f54d6d38ab51a3d.png" alt="image-20220131110555484"></p>
+<ul>
+<li>未命中时的写策略</li>
+</ul>
+<ol>
+<li>写分配法</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/0a17572d1fd49d35a133c75678abbaa5.png" alt="image-20220131110657919"></p>
+<ol start="2">
+<li>非写分配法</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/b5d92be2712b2c2bd21dd490c602ff7c.png" alt="image-20220131110744533"></p>
+<h4 id="11-虚拟存储器"><a href="#11-虚拟存储器" class="headerlink" title="11. 虚拟存储器"></a>11. 虚拟存储器</h4><ul>
+<li>概念</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5ee39486bd5478b0d554b890d7e44606.png" alt="image-20220131111953580"></p>
+<ul>
+<li>页式虚拟存储器</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e77888188aaf7caf672a96469545e559.png" alt="image-20220131112322122"></p>
+<ul>
+<li>段式虚拟存储器</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/1cb296f3eaa9d78665393b2cebaa09a7.png" alt="image-20220131112408107"></p>
+<ul>
+<li>段页式虚拟存储器</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/1d1ccbbe5a4f6e21c3e7310d2985c760.png" alt="image-20220131112443405"></p>
+<ul>
+<li>快表</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d9704ee5cb0386b6ee60fcbb885a283f.png" alt="image-20220131112516038"></p>
+<h3 id="4-指令系统"><a href="#4-指令系统" class="headerlink" title="4.指令系统"></a>4.指令系统</h3><h4 id="1-指令格式"><a href="#1-指令格式" class="headerlink" title="1.指令格式"></a>1.指令格式</h4><ul>
+<li>指令的含义</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f68ad8b77b8e54928a36150f0834c777.png" alt="image-20220131112840832"></p>
+<ul>
+<li>指令的格式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e7cab98708b1f23e8f5ccd3b262c5198.png" alt="image-20220131113124046"></p>
+<ul>
+<li>地址码</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/28395eedf58477a41664d697472c9522.png" alt="image-20220131113711077"></p>
+<ul>
+<li>扩展操作码举例</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/cf67969a2fff291b463ff810bc6638ca.png" alt="image-20220131114025995"></p>
+<ul>
+<li>扩展操作码的规范</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/4aa94958d47cbfa00ac1254e4f2d5b5d.png" alt="image-20220131114229234"></p>
+<ul>
+<li>指令操作码</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6254c6e553a1817161aa513292179262.png" alt="image-20220131114639178"></p>
+<ul>
+<li>操作类型</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/bb03f70859a050c98de7744adc660f5e.png" alt="image-20220131114747086"></p>
+<h4 id="2-指令寻址"><a href="#2-指令寻址" class="headerlink" title="2.指令寻址"></a>2.指令寻址</h4><ul>
+<li>数据存放</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/160273ca374e4696e4c819086cdba304.png" alt="image-20220131115415882"></p>
+<ul>
+<li>指令寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/55542cbce26d309162495992207214e9.png" alt="image-20220131120018553"></p>
+<h4 id="3-数据寻址1"><a href="#3-数据寻址1" class="headerlink" title="3.数据寻址1"></a>3.数据寻址1</h4><ul>
+<li>操作数类型</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/12fcd7522fd0849d4eabe3d145ee2dcf.png" alt="image-20220203160315336"></p>
+<ul>
+<li>地址码的构成</li>
+</ul>
+<p>寻址特征：采用哪一种方式进行寻址</p>
+<p><strong>通过寻址特征和形式地址求出有效地址</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/2284d91df51ca8deb87e54f9cbe98cc4.png" alt="image-20220203160601853"></p>
+<ul>
+<li>立即寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/816605d3b66bbf00abe40a235b02e8ad.png" alt="image-20220203160950788"></p>
+<ul>
+<li>直接寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f5656834a3f9af54fcdb9dff112930a9.png" alt="image-20220203161136445"></p>
+<ul>
+<li>间接寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a378fa54aa10ed6f7df6fc67860646a2.png" alt="image-20220203161401565"></p>
+<ul>
+<li>寄存器寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e562f4caae4cbb051ab8d63d1d4a2297.png" alt="image-20220203161526792"></p>
+<ul>
+<li>寄存器间接寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/8575179659f1ca68bac57e11f43a3051.png" alt="image-20220203161628168"></p>
+<ul>
+<li>隐含寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/c6de7204539db553c7b7c964727d3630.png" alt="image-20220203161742257"></p>
+<ul>
+<li>总结</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/8c893bbf78bc0ef6ff2aa9ff3572c9db.png" alt="image-20220203161816204"></p>
+<h4 id="4-数据寻址2——偏移寻址"><a href="#4-数据寻址2——偏移寻址" class="headerlink" title="4.数据寻址2——偏移寻址"></a>4.数据寻址2——偏移寻址</h4><ul>
+<li>基址寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/1bab1293b9d8f5e6927badeeaa368b74.png" alt="image-20220203162240926"></p>
+<ul>
+<li>变址寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6754c2a84ac4a5093438f550821b6e4d.png" alt="image-20220203163048908"></p>
+<ul>
+<li>相对寻址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/09becc0cc4fb8a33e391a312bfb2429e.png" alt="image-20220203163432186"></p>
+<ul>
+<li>相对寻址举例</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f76cdbfb833f74142ae3aa7ff305ac11.png" alt="image-20220203164528487"></p>
+<ul>
+<li>总结</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/928ebadb8a6c3acd79e43ec8bc45d7e3.png" alt="image-20220203164700915"></p>
+<h4 id="5-数据寻址——堆栈寻址"><a href="#5-数据寻址——堆栈寻址" class="headerlink" title="5. 数据寻址——堆栈寻址"></a>5. 数据寻址——堆栈寻址</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/b0fade11f4338b4b7333362a5908bfcf.png" alt="image-20220203165103334"></p>
+<h4 id="6-CISC和RISC"><a href="#6-CISC和RISC" class="headerlink" title="6.CISC和RISC"></a>6.CISC和RISC</h4><ul>
+<li>基本含义</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e6eda5bbdfb0b7b2728e83bb99f75c14.png" alt="image-20220203165740882"></p>
+<ul>
+<li>特点</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e0cd686e5c449ab384a41c9d29312b59.png" alt="image-20220203165907312"></p>
+<h3 id="5-中央处理器"><a href="#5-中央处理器" class="headerlink" title="5.中央处理器"></a>5.中央处理器</h3><h4 id="1-CPU功能和基本结构"><a href="#1-CPU功能和基本结构" class="headerlink" title="1.CPU功能和基本结构"></a>1.CPU功能和基本结构</h4><ul>
+<li>CPU的功能</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/2554c967abb2d319f20b299f8b611d00.png" alt="image-20220204141306234"></p>
+<ul>
+<li>运算器和控制器的功能</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/602a5d20f828531c5ff485dd701080ce.png" alt="image-20220204141524507"></p>
+<ul>
+<li>运算器的基本结构</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d9e23a773db7c0a6dd80561d3b0cefa6.png" alt="image-20220204142113636"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/46ae551bac10378440f81eb578218d1d.png" alt="image-20220204142656159"></p>
+<ul>
+<li>控制器的基本结构</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/76fb18ed635c385fb94be600b99f532e.png" alt="image-20220204143337083"></p>
+<ul>
+<li>CPU的基本结构</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/75d1ab09597a15c49c35a011e11a5ad3.png" alt="image-20220204143620270"></p>
+<h4 id="2-指令周期的数据流"><a href="#2-指令周期的数据流" class="headerlink" title="2.指令周期的数据流"></a>2.指令周期的数据流</h4><ul>
+<li>指令周期</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/030095b1be9fa426dda21ee0d4a95cf2.png" alt="image-20220204143912635"></p>
+<ul>
+<li>指令周期流程</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d0a34aa101ff114819e499416f175e42.png" alt="image-20220204144244474"></p>
+<ul>
+<li>取指周期</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/dc0edafe0bf09d5db547b0d22a32507b.png" alt="image-20220204144352993"></p>
+<ul>
+<li>间址周期</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/35ab662e4598657fb4db29c505dc5b78.png" alt="image-20220204144727112"></p>
+<ul>
+<li>中断周期</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/227835779ba073435cb904d4850ae750.png" alt="image-20220204145045629"></p>
+<ul>
+<li>指令执行方案</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5f480c3480e90a1346620ea10eaa96eb.png" alt="image-20220204145230729"></p>
+<h4 id="3-数据通路1——CPU内部单总线通路"><a href="#3-数据通路1——CPU内部单总线通路" class="headerlink" title="3. 数据通路1——CPU内部单总线通路"></a>3. 数据通路1——CPU内部单总线通路</h4><ul>
+<li>数据通路</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/144b7c8374e9369f05a8ee97f3481b1d.png" alt="image-20220204145502071"></p>
+<ul>
+<li>CPU内部单总线方式</li>
+</ul>
+<p>在介绍这个之前，首先区别一下系统总线和内部总线。</p>
+<p><strong>内部总线</strong>是指同一部件，如CPU内部连接各寄存器及运算部件之间的总线;</p>
+<p><strong>系统总线</strong>是指同一台计算机系统的各部件，如CPU、内存、通道和各类l&#x2F;o接口间互相连接的总线。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/63d70fc63f928a1edabd35879605347b.png" alt="image-20220204150409836"></p>
+<ul>
+<li>例题</li>
+</ul>
+<blockquote>
+<p>取指周期</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3bbbdf61d3a05e4e8c93ceec68119ffd.png" alt="image-20220204150745077"></p>
+<blockquote>
+<p>间址周期</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/1789acac5f170a6ea9173df2ca78569d.png" alt="image-20220204151034301"></p>
+<blockquote>
+<p>执行周期</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e2eff1b46315952d462d6510a6a4897e.png" alt="image-20220204151252258"></p>
+<h4 id="4-数据通路2——专用数据通路"><a href="#4-数据通路2——专用数据通路" class="headerlink" title="4. 数据通路2——专用数据通路"></a>4. 数据通路2——专用数据通路</h4><ul>
+<li>取指周期</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/214a286453b4857265a1cac5b8286435.png" alt="image-20220204151703479"></p>
+<ul>
+<li>例题</li>
+</ul>
+<blockquote>
+<p>第一问</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/9d28e16ad8b2ee27b330616a40371c86.png" alt="image-20220204151933329"></p>
+<blockquote>
+<p>第二问</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/68c027e6ac547372ac6698cd01f1ba1b.png" alt="image-20220204152000380"></p>
+<blockquote>
+<p>第三问</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/87efa1b1d6e83ae57c020fe744680871.png" alt="image-20220204152313291"></p>
+<blockquote>
+<p>第四问</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/095525086a2b7de2f3d9fc9949e21d0e.png" alt="image-20220204152446588"></p>
+<blockquote>
+<p>第五问</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/9230e9683e34632cbd17960b3744b91e.png" alt="image-20220204152550115"></p>
+<blockquote>
+<p>第六问</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/155377151cef1ea5240dfb4cc159919a.png" alt="image-20220204152634574"></p>
+<h4 id="5-控制器1——硬布线"><a href="#5-控制器1——硬布线" class="headerlink" title="5. 控制器1——硬布线"></a>5. 控制器1——硬布线</h4><ul>
+<li>控制器的结构和功能</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/75c8e3ce39e0fe6b9b7b2c38f613c172.png" alt="image-20220204155824810"></p>
+<ul>
+<li>控制单元的输入和输出</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d0e293bb1b9200d7d2d65695d0a2eae4.png" alt="image-20220204155733033"></p>
+<ul>
+<li>CPU的控制方式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a02219609a96dbdd3e01609394242bd5.png" alt="image-20220204155634351"></p>
+<h4 id="6-控制器2——微程序"><a href="#6-控制器2——微程序" class="headerlink" title="6.控制器2——微程序"></a>6.控制器2——微程序</h4><ul>
+<li>控制器的设计思路</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/15da80ce2f214e246f5c8da28a22e85d.png" alt="image-20220204160400055"></p>
+<ul>
+<li>微程序的基本思想</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d1be8ffda9c2646acd16aa15a153e94f.png" alt="image-20220205121414411"></p>
+<ul>
+<li>微程序控制器的基本结构</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/56375e2daea10402614d59b9a5b1fac5.png" alt="image-20220205121747933"></p>
+<ul>
+<li>控制存储器</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6226825260002c3da0f4a66d12981a60.png" alt="image-20220205122032395"></p>
+<ul>
+<li>微指令的格式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/c9bd545f2fd685ebfc33747375ef5df1.png" alt="image-20220205122525266"></p>
+<ul>
+<li>微指令的编码方式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/bc39fda77322dcca59181d65c23b9b09.png" alt="image-20220205134043538"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/8b9e067ef9099b2acc1819559eef7331.png" alt="image-20220205134142489"></p>
+<ul>
+<li>微指令的地址形成方式</li>
+</ul>
+<p>前两种理解，后四种了解（不重要）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a43b46c668207e0e85a058dbc7c8452d.png" alt="image-20220205134325290"></p>
+<ul>
+<li>下地址方式例题</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ef072d06810ba2c4994ed7de38e70545.png" alt="image-20220205135318575"></p>
+<ul>
+<li>一些易混淆的概念</li>
+</ul>
+<p><strong>指令&#x3D;微程序</strong></p>
+<p><strong>微程序由多个微指令组成</strong></p>
+<p><strong>微指令由多个微命令组成</strong></p>
+<p><strong>微命令是微操作的控制信号</strong></p>
+<p><strong>微操作是微命令的执行过程</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d3ff0f8fc66cd31203e160529ac2942b.png" alt="image-20220205135623551"></p>
+<h4 id="7-指令流水线的概念及性能指标"><a href="#7-指令流水线的概念及性能指标" class="headerlink" title="7.指令流水线的概念及性能指标"></a>7.指令流水线的概念及性能指标</h4><ul>
+<li>指令流水的定义</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/370699e9763bc031538bb0a4de38d68e.png" alt="image-20220205140219456"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/336b6e7cae8ac61db9c527ed3936a922.png" alt="image-20220205140757971"></p>
+<ul>
+<li>流水线的表示方法</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/7d1528b65d36ab5bf1c93625a963b171.png" alt="image-20220205140709591"></p>
+<ul>
+<li>流水线的性能指标</li>
+</ul>
+<ol>
+<li>吞吐率</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/09ed2d97f36a30df1d83e07866b5335e.png" alt="image-20220205141557742"></p>
+<ol start="2">
+<li>加速比</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e862a131bddc1ced11f5d494fc6d813f.png" alt="image-20220205141822268"></p>
+<ol start="3">
+<li>效率</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/df60aaebd911d1429b2637768c28edce.png" alt="image-20220205142015561"></p>
+<h4 id="8-影响流水线的因素及分类"><a href="#8-影响流水线的因素及分类" class="headerlink" title="8.影响流水线的因素及分类"></a>8.影响流水线的因素及分类</h4><ul>
+<li>机器周期的设置</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d33a5b46edcae7450ae11a558c7f5d16.png" alt="image-20220205142525993"></p>
+<ul>
+<li>影响流水线的因素</li>
+</ul>
+<ol>
+<li>结构相关</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/4443169fc67c8d86cae956ee02641fae.png" alt="image-20220205142420789"></p>
+<ol start="2">
+<li>数据相关</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/70963817d737824e4c84de2100eee579.png" alt="image-20220205142724384"></p>
+<ul>
+<li>例题</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5622277748f2713739d0ec4e8ef095e1.png" alt="image-20220205143035517"></p>
+<ul>
+<li>数据相关的一些概念</li>
+</ul>
+<p>RAW（read after write）：写后读</p>
+<p>另外两个同上</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/71029c313d795011173afaf05c5b06c8.png" alt="image-20220205143316267"></p>
+<ol start="3">
+<li>控制相关</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3c3b8ff768aa54356580548b7763b9d0.png" alt="image-20220205143549521"></p>
+<ul>
+<li>总结</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/9fc8b8d1bba9bd4b6b6c9311ece929e9.png" alt="image-20220205143611590"></p>
+<ul>
+<li>流水线的分类</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/0f684a4eae5a56c19ed359c53a7eeefa.png" alt="image-20220205143705278"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f92e2aba57f1c7fc2073d48878173e90.png" alt="image-20220205143723927"></p>
+<ul>
+<li>流水新的多发技术</li>
+</ul>
+<ol>
+<li>超标量技术</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d9b5dc6513487efd7b4cf18892a1bec2.png" alt="image-20220205143838745"></p>
+<ol start="2">
+<li>超流水技术</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f3d55686c889ac529af88898c117e2f7.png" alt="image-20220205143937880"></p>
+<ol start="3">
+<li>超长指令字</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3c95904f7e0ec46860873e259dab0146.png" alt="image-20220205144032581"></p>
+<h3 id="6-总线"><a href="#6-总线" class="headerlink" title="6.总线"></a>6.总线</h3><h4 id="1-总线的概念和分类"><a href="#1-总线的概念和分类" class="headerlink" title="1.总线的概念和分类"></a>1.总线的概念和分类</h4><ul>
+<li>总线的特点</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/164d596dd868da767ad4bfb2ed247564.png" alt="image-20220206132533972"></p>
+<ul>
+<li>总线特性</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/22cac0e81292f9691759b9dd2395665b.png" alt="image-20220206132827567"></p>
+<ul>
+<li>总线的分类</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6c6b10d75480c878eb31ac59c7b351d2.png" alt="image-20220207135755282"></p>
+<ul>
+<li>串行总线与并行总线</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/2aa50de656d3bdacc158a6148b7b5593.png" alt="image-20220207135911160"></p>
+<ul>
+<li>按总线功能</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/1dc6736642dd076106a3e80046673ad9.png" alt="image-20220207145722749"></p>
+<ul>
+<li>系统总线的结构</li>
+</ul>
+<ol>
+<li>单总线结构</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ad02d852069bce68058312ca640e268b.png" alt="image-20220207150008889"></p>
+<ol start="2">
+<li>双总线结构</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/9a82e754b9eb848040dfabd0b9e654a0.png" alt="image-20220207150221254"></p>
+<ol start="3">
+<li>三总线结构</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/290887245d8f5b2d29f5e617c66d3c9d.png" alt="image-20220207150904024"></p>
+<h4 id="2-性能指标"><a href="#2-性能指标" class="headerlink" title="2.性能指标"></a>2.性能指标</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/1b1faca7a8eebb36819c786a762da666.png" alt="image-20220207151751475"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/0030bed3fb56cfd95bf2fa5e971c5969.png" alt="image-20220207152007687"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3a5ba630b42c8132a4f143c351314ba6.png" alt="image-20220207152906097"></p>
+<ul>
+<li>带宽例题</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/de5c2bf2e2d6bc3e3f054a308212cb59.png" alt="image-20220207152737201"></p>
+<ul>
+<li>上节遗留问题：串行总线和并行总线哪个速度更快</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6897d13da24eff090a2d9b66259e3f1e.png" alt="image-20220207152646974"></p>
+<ul>
+<li>总结</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/7d33a876eeb8700a1533085bb1822abc.png" alt="image-20220207153237319"></p>
+<h4 id="3-总线仲裁"><a href="#3-总线仲裁" class="headerlink" title="3. 总线仲裁"></a>3. 总线仲裁</h4><ul>
+<li>基本特点</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/7279a6dbec5cb5d4a5a17854de80646b.png" alt="image-20220207153156272"></p>
+<ul>
+<li>集中仲裁方式（重要）</li>
+</ul>
+<ol>
+<li>链式查询方式</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/b9ff7804f991eaacd1fdd5417413d21e.png" alt="image-20220207153710538"></p>
+<ol start="2">
+<li>计数器查询方式</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/2e45771b53628071eec2a8f81b84a8b5.png" alt="image-20220207154102188"></p>
+<ol start="3">
+<li>独立请求方式</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/cf0c473f5b1c964a6417e26c62ccca3b.png" alt="image-20220207154404507"></p>
+<ul>
+<li>三种方式总结</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/4734326a6e8495e830392e2e8d3dc6ce.png" alt="image-20220207154449055"></p>
+<ul>
+<li>分布仲裁方式（了解即可）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/614602504cf7f7ccad8606cb6cf66d24.png" alt="image-20220207154559945"></p>
+<h4 id="4-总线操作和定时"><a href="#4-总线操作和定时" class="headerlink" title="4. 总线操作和定时"></a>4. 总线操作和定时</h4><ul>
+<li>总线传输的四个阶段</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/cc7349d14a4e3d6527adef1079f5b073.png" alt="image-20220207160527516"></p>
+<ul>
+<li>同步定时方式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a50fd9adf50da85cded7b985b36d6358.png" alt="image-20220207160831129"></p>
+<ul>
+<li>异步定时方式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/aae8be917ec220069ccc71311491243a.png" alt="image-20220207161255282"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/604702c709a8accb5ddce0d167a4f318.png" alt="image-20220207161158530"></p>
+<ul>
+<li>例题（数据传输率）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/28babaf085ae0f0b4b3e1c131c382903.png" alt="image-20220207161520965"></p>
+<ul>
+<li>半同步通信（扩展）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/0319d8f60824e1a1793a9cd22cc6ec42.png" alt="image-20220207161625989"></p>
+<ul>
+<li>分离式通信（拓展）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/4998fcbba87252150bef30c6149b37f5.png" alt="image-20220207161715786"></p>
+<h4 id="5-总线标准"><a href="#5-总线标准" class="headerlink" title="5. 总线标准"></a>5. 总线标准</h4><ul>
+<li>基本特点</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ea78e104be33dfc3e7aaa7b1258ffeed.png" alt="image-20220207162010796"></p>
+<h3 id="7-输入输出系统"><a href="#7-输入输出系统" class="headerlink" title="7. 输入输出系统"></a>7. 输入输出系统</h3><h4 id="1-IO系统基本概念"><a href="#1-IO系统基本概念" class="headerlink" title="1. IO系统基本概念"></a>1. IO系统基本概念</h4><ul>
+<li>演变过程</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/fdb3a339daac055e75cc1af722a47b63.png" alt="image-20220207163204606"></p>
+<ul>
+<li>IO系统基本组成</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/79a23814c0ebc20bc5e77989530af922.png" alt="image-20220207163129561"></p>
+<ul>
+<li>IO方式简介</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a208dbb3e9ea85b7652228120349f4ac.png" alt="image-20220207163711678"></p>
+<h4 id="2-输入输出"><a href="#2-输入输出" class="headerlink" title="2. 输入输出"></a>2. 输入输出</h4><ul>
+<li>外部设备</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5ad0555f87043180eb2427195f98ae55.png" alt="image-20220208134546442"></p>
+<ul>
+<li>显示器</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d7a7677d47c53dce0af5d78caa98c580.png" alt="image-20220208135025276"></p>
+<h4 id="3-外存储器"><a href="#3-外存储器" class="headerlink" title="3. 外存储器"></a>3. 外存储器</h4><ul>
+<li>基本概念</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/be01585a12174576f58bde50faea6f08.png" alt="image-20220208135334706"></p>
+<ul>
+<li>磁盘存储器</li>
+</ul>
+<ol>
+<li>磁盘设备的组成</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/38feaa812d98a207ad0905cf9fbcc83a.png" alt="image-20220208135742975"></p>
+<ol start="2">
+<li>性能指标</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/37490a5f1fda702e9be6febe2fa906d9.png" alt="image-20220208140554007"></p>
+<ol start="3">
+<li>存取时间计算过程</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d3071cc6503dbeb9f1caa7961837492e.png" alt="image-20220208140315461"></p>
+<ol start="4">
+<li>磁盘地址和磁盘的工作过程</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5fe425b7ee9362f2974f24527932f759.png" alt="image-20220208140835206"></p>
+<h4 id="4-IO接口"><a href="#4-IO接口" class="headerlink" title="4. IO接口"></a>4. IO接口</h4><ul>
+<li>功能</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/0c86881dae11f2d5fffb27e2ed1766ac.png" alt="image-20220208141144133"></p>
+<ul>
+<li>基本结构</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/51642e1e0f06632f4b099fa10fd2c2d2.png" alt="image-20220208141543148"></p>
+<ul>
+<li>接口与端口</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/29bfa5c0bebfbc5e20e0510eb9ba6401.png" alt="image-20220208141723953"></p>
+<ul>
+<li>IO端口及其编址</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/95b8558e77ef7f3aca5c976bdc4d1cce.png" alt="image-20220208142103849"></p>
+<ul>
+<li>IO接口的类型</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/8dd86f908175ea0d192a2fb5f00c30a8.png" alt="image-20220208142227284"></p>
+<h4 id="5-程序查询方式"><a href="#5-程序查询方式" class="headerlink" title="5. 程序查询方式"></a>5. 程序查询方式</h4><ul>
+<li>程序查询方式流程图</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/64b27f448ddf1fa0ebfc0d6f70852d39.png" alt="image-20220208143347520"></p>
+<ul>
+<li>接口结构</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/5830c549d083bbd48d6027b07fbd3bce.png" alt="image-20220208143536105"></p>
+<ul>
+<li>例题</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/857b334b50c013566efe35cf2377ba06.png" alt="image-20220208144328807"></p>
+<ul>
+<li>总结</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d24cb210b1414894618d266f7aa20d89.png" alt="image-20220208144140914"></p>
+<h4 id="6-中断系统"><a href="#6-中断系统" class="headerlink" title="6. 中断系统"></a>6. 中断系统</h4><ul>
+<li>基本概念</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/ea8e2f991238f1c55c040b894956abe1.png" alt="image-20220208144639975"></p>
+<ul>
+<li>分类</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a407362381f5100af6feb3b603a12c40.png" alt="image-20220208144748709"></p>
+<ul>
+<li>中断请求标记</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/6e690d3995bd2f2383ea133c7995bb61.png" alt="image-20220208144954465"></p>
+<ul>
+<li>中断判优</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f25231352b5d626fb8abb8eccca255f7.png" alt="image-20220208145216623"></p>
+<ul>
+<li>优先级设置</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/c95761296ec51644df9a03e473ba1a4d.png" alt="image-20220208145242843"></p>
+<ul>
+<li>中断处理过程</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d6197ffd96cddb3110904b5a896e68a6.png" alt="image-20220208145431043"></p>
+<ul>
+<li>中断隐指令</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/61883bb117c304df9ad656ba7cee42a2.png" alt="image-20220208145809520"></p>
+<ul>
+<li>中断服务程序</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/b74d792dd24394357463c81a6ce337de.png" alt="image-20220208145920443"></p>
+<ul>
+<li>单重中断和多重中断</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/932b63ff74530b49ff650d8aa76f16ea.png" alt="image-20220208150150476"></p>
+<ul>
+<li>中断屏蔽技术</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/880a919e0369e7e033d92631629e30b5.png" alt="image-20220208150354883"></p>
+<ul>
+<li>中断屏蔽技术 例题（重要，需掌握）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/18654e438e941ff36a51cddc279c586f.png" alt="image-20220208150716402"></p>
+<h4 id="7-程序中断方式"><a href="#7-程序中断方式" class="headerlink" title="7. 程序中断方式"></a>7. 程序中断方式</h4><ul>
+<li>程序中断方式过程</li>
+</ul>
+<p>恢复现场即算做下一次启动</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/24d106161a26fe74fbd03cf40b1cdb9a.png" alt="image-20220208151033847"></p>
+<ul>
+<li>例题 第一问</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/d37dc211e56821fe7c16e0930779adfb.png" alt="image-20220208151244322"></p>
+<ul>
+<li>例题 第二问 （重要）</li>
+</ul>
+<p>CPI：执行一条指令所需要的时钟周期</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/e4820ba9d0a9aa2dab475f40dffd1250.png" alt="image-20220208151751342"></p>
+<h4 id="8-DMA方式"><a href="#8-DMA方式" class="headerlink" title="8. DMA方式"></a>8. DMA方式</h4><ul>
+<li>DMA 控制器</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/2eb67ef40a000a714fa7fd7f12f4a228.png" alt="image-20220208152102933"></p>
+<ul>
+<li>结构</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/a5bc61cb7fdb3bf5c2ad59520bba77ae.png" alt="image-20220208152326186"></p>
+<ul>
+<li>DMA传送方式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/f4796ca06546b9c976fc5b3548660209.png" alt="image-20220208152619958"></p>
+<ul>
+<li>DMA方式的特点</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/14445a45950668e1d11167fa92c84059.png" alt="image-20220208152708447"></p>
+<ul>
+<li>DMA方式与中断方式对比</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/396ddb8c09813b91bea8d8101b5f5e03.png" alt="image-20220208152756433"></p>
+<ul>
+<li>CPU占用情况 中断方式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/911cd818bbee04625757ab7d2d62b8fa.png" alt="image-20220208153306469"></p>
+<ul>
+<li>CPU占用情况 DMA方式</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/de1bc009b1a41a868e1126313010a2e7.png" alt="image-20220208153659050"></p>
+<ul>
+<li>总结</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/3161b4b7527b4b5dfae8ebcf1300bbd6.png" alt="image-20220208153841685"></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/d20f536c64d06e5fcf4bfe2ec5dc25d.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/d20f536c64d06e5fcf4bfe2ec5dc25d.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Smith</div><div class="post-copyright__author_desc">人生太短，要干的事太多，我要争分夺秒</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://smithhs.cn/2022/03/04/2022-3-4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://smithhs.cn/2022/03/04/2022-3-4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/')">计算机组成原理</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/1.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/1.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/2.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/2.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://smithhs.cn/2022/03/04/2022-3-4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=计算机组成原理&amp;url=https://smithhs.cn/2022/03/04/2022-3-4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/&amp;pic=https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/data-structure.png" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://smithhs.cn" target="_blank">Smith</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>计算机组成原理<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/crud.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/03/2022-3-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/data-structure.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数据结构与算法</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/16/2023-5-16-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/R-C.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">开发环境安装</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">计算机组成原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number"></span> <span class="toc-text">1.计算机系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">1. 计算机发展历程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">2.</span> <span class="toc-text">2.计算机系统的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">3.存储器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E8%BF%90%E7%AE%97%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">4.运算器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">5. 控制器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">6. 计算机的工作过程（重点）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">7.</span> <span class="toc-text">7. 计算机的层次结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">8.</span> <span class="toc-text">8.计算机的性能指标</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">8.1.</span> <span class="toc-text">1. 存储器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-CPU"><span class="toc-number">8.2.</span> <span class="toc-text">2. CPU</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E7%B3%BB%E7%BB%9F%E6%95%B4%E4%BD%93%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">8.3.</span> <span class="toc-text">3.系统整体的性能指标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E6%80%9D%E8%80%83"><span class="toc-number">8.4.</span> <span class="toc-text">4. 思考</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number"></span> <span class="toc-text">2. 数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6"><span class="toc-number">1.</span> <span class="toc-text">1.进位计数制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-BCD%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">2.BCD码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">3.</span> <span class="toc-text">3. 字符与字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">4.奇偶校验码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%B5%B7%E6%98%8E%E7%A0%81"><span class="toc-number">5.</span> <span class="toc-text">5.海明码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A0%A1%E9%AA%8C%E7%A0%81%EF%BC%88CRC%E7%A0%81%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">6. 循环冗余校验码（CRC码）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">7.</span> <span class="toc-text">7. 定点数的表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-number">8.</span> <span class="toc-text">8.移位运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E6%BA%A2%E5%87%BA%E5%88%A4%E6%96%AD"><span class="toc-number">9.</span> <span class="toc-text">9. 溢出判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97"><span class="toc-number">10.</span> <span class="toc-text">10.原码乘法运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97"><span class="toc-number">11.</span> <span class="toc-text">11.补码乘法运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-%E5%8E%9F%E7%A0%81%E9%99%A4%E6%B3%95%E8%BF%90%E7%AE%97"><span class="toc-number">12.</span> <span class="toc-text">12.原码除法运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95%E8%BF%90%E7%AE%97"><span class="toc-number">13.</span> <span class="toc-text">13.补码除法运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.强制类型转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E5%92%8C%E6%8E%92%E5%88%97"><span class="toc-number">15.</span> <span class="toc-text">15.数据的存储和排列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">16.</span> <span class="toc-text">16. 浮点数的表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-IEEE-754-%E6%B5%AE%E7%82%B9%E6%95%B0%E6%A0%87%E5%87%86"><span class="toc-number">17.</span> <span class="toc-text">17. IEEE 754 浮点数标准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">18.</span> <span class="toc-text">18.浮点数的运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-%E7%94%B5%E8%B7%AF%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">19.</span> <span class="toc-text">19. 电路的基本原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number"></span> <span class="toc-text">3.存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%BB%E5%AD%98%E7%AE%80%E5%8D%95%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%AF%BB%E5%9D%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">1. 主存简单模型和寻址概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AD%98%E5%82%A8%E5%99%A8RAM"><span class="toc-number">2.</span> <span class="toc-text">2.存储器RAM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-ROM-%E5%8F%AA%E8%AF%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">3.ROM(只读存储器)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%AD%98%E5%82%A8%E5%99%A8%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">4.</span> <span class="toc-text">4.存储器基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E4%B8%BB%E5%AD%98%E4%B8%8ECPU%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">5.</span> <span class="toc-text">5. 主存与CPU的连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E4%B8%BB%E5%AD%98%E4%B8%8ECPU%E7%9A%84%E8%BF%9E%E6%8E%A5%EF%BC%88%E4%BE%8B%E9%A2%98%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">6.主存与CPU的连接（例题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%8F%8C%E7%AB%AF%E5%8F%A3RAM%E5%92%8C%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text">7.双端口RAM和多模块存储器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86%E5%8F%8A%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="toc-number">8.</span> <span class="toc-text">8.局部性原理及性能分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-Cache-%E5%9C%B0%E5%9D%80%E6%98%A0%E5%B0%84"><span class="toc-number">9.</span> <span class="toc-text">9. Cache 地址映射</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-cache%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95%E5%8F%8A%E5%86%99%E7%AD%96%E7%95%A5"><span class="toc-number">10.</span> <span class="toc-text">10.cache替换算法及写策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">11.</span> <span class="toc-text">11. 虚拟存储器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-number"></span> <span class="toc-text">4.指令系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">1.指令格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8C%87%E4%BB%A4%E5%AF%BB%E5%9D%80"><span class="toc-number">2.</span> <span class="toc-text">2.指令寻址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E5%AF%BB%E5%9D%801"><span class="toc-number">3.</span> <span class="toc-text">3.数据寻址1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E5%AF%BB%E5%9D%802%E2%80%94%E2%80%94%E5%81%8F%E7%A7%BB%E5%AF%BB%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.数据寻址2——偏移寻址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E5%AF%BB%E5%9D%80%E2%80%94%E2%80%94%E5%A0%86%E6%A0%88%E5%AF%BB%E5%9D%80"><span class="toc-number">5.</span> <span class="toc-text">5. 数据寻址——堆栈寻址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-CISC%E5%92%8CRISC"><span class="toc-number">6.</span> <span class="toc-text">6.CISC和RISC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number"></span> <span class="toc-text">5.中央处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-CPU%E5%8A%9F%E8%83%BD%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">1.CPU功能和基本结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-number">2.</span> <span class="toc-text">2.指令周期的数据流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF1%E2%80%94%E2%80%94CPU%E5%86%85%E9%83%A8%E5%8D%95%E6%80%BB%E7%BA%BF%E9%80%9A%E8%B7%AF"><span class="toc-number">3.</span> <span class="toc-text">3. 数据通路1——CPU内部单总线通路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF2%E2%80%94%E2%80%94%E4%B8%93%E7%94%A8%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">4.</span> <span class="toc-text">4. 数据通路2——专用数据通路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%8E%A7%E5%88%B6%E5%99%A81%E2%80%94%E2%80%94%E7%A1%AC%E5%B8%83%E7%BA%BF"><span class="toc-number">5.</span> <span class="toc-text">5. 控制器1——硬布线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E6%8E%A7%E5%88%B6%E5%99%A82%E2%80%94%E2%80%94%E5%BE%AE%E7%A8%8B%E5%BA%8F"><span class="toc-number">6.</span> <span class="toc-text">6.控制器2——微程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E6%8C%87%E4%BB%A4%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">7.</span> <span class="toc-text">7.指令流水线的概念及性能指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%BD%B1%E5%93%8D%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E5%9B%A0%E7%B4%A0%E5%8F%8A%E5%88%86%E7%B1%BB"><span class="toc-number">8.</span> <span class="toc-text">8.影响流水线的因素及分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%80%BB%E7%BA%BF"><span class="toc-number"></span> <span class="toc-text">6.总线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%80%BB%E7%BA%BF%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">1.总线的概念和分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">2.</span> <span class="toc-text">2.性能指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%80%BB%E7%BA%BF%E4%BB%B2%E8%A3%81"><span class="toc-number">3.</span> <span class="toc-text">3. 总线仲裁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%80%BB%E7%BA%BF%E6%93%8D%E4%BD%9C%E5%92%8C%E5%AE%9A%E6%97%B6"><span class="toc-number">4.</span> <span class="toc-text">4. 总线操作和定时</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%80%BB%E7%BA%BF%E6%A0%87%E5%87%86"><span class="toc-number">5.</span> <span class="toc-text">5. 总线标准</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number"></span> <span class="toc-text">7. 输入输出系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-IO%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">1. IO系统基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="toc-number">2.</span> <span class="toc-text">2. 输入输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%A4%96%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">3. 外存储器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-IO%E6%8E%A5%E5%8F%A3"><span class="toc-number">4.</span> <span class="toc-text">4. IO接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%A8%8B%E5%BA%8F%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">5. 程序查询方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="toc-number">6.</span> <span class="toc-text">6. 中断系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E6%96%B9%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">7. 程序中断方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-DMA%E6%96%B9%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">8. DMA方式</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2022 - 2024 By <a class="footer-bar-link" href="/" title="Smith" target="_blank">Smith</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/Smithhss/smithhs.github.io.git" title="Hexo">Hexo</a></div></div></div></footer></div></div></div><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/d20f536c64d06e5fcf4bfe2ec5dc25d.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">33</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于我</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8805965276" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/my/m/music/playlist?id=464586318&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn1.tianli0.top/npm/js-heo@1.0.6/translate/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.14/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js"></script><script>var meting_api = "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("07/01/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By 安知鱼 V1.5.3",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Smith 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "visitor@anheyu.com";</script><script>//动态标题
+let leaveTitle = '再看看嘛🌈！';
+let backTitle = '欢迎回来✌️！';
+let OriginTitile = document.title
+let titleTime
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = leaveTitle
+    clearTimeout(titleTime)
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = backTitle + OriginTitile
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile
+    }, 2000)
+  }
+})</script><script async data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/waterfall.js/1.1.0/waterfall.min.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片与超链接拖拽
+let aElements = document.getElementsByTagName("a");
+for (let i = 0; i < aElements.length; i++) {
+  aElements[i].setAttribute("draggable", "false");
+  let imgElements = aElements[i].getElementsByTagName("img");
+  for (let j = 0; j < imgElements.length; j++) {
+    imgElements[j].setAttribute("draggable", "false");
+  }
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+var oncontextmenuFunction = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 监听右键初始化
+window.oncontextmenu = oncontextmenuFunction
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function (url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", anzhiyu.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | Smith")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+anzhiyu.catalogActive();
+anzhiyu.tagsPageActive();
+anzhiyu.categoriesBarActive();
+anzhiyu.topCategoriesBarScroll();
+anzhiyu.switchRightClickMenuHotReview();
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);
+setTimeout(() => {if (typeof addFriendLinksInFooter === "function") {addFriendLinksInFooter();}}, 200)</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div></body></html>
