@@ -1,0 +1,1492 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>CSS | Smith</title><meta name="keywords" content="CSS"><meta name="author" content="Smith"><meta name="copyright" content="Smith"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="CSS"><meta name="application-name" content="CSS"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="CSS"><meta property="og:url" content="https://smithhs.cn/2021/08/02/2021-08-02-CSS/index.html"><meta property="og:site_name" content="Smith"><meta property="og:description" content="目录 1 css基础知识 1.1基础知识 1.1 概述 1.2 优势 1.3应用css的步骤 1.2 css基本语法 1.3 css使用方法 1.3.1 内嵌样式 1.3.2 内部样式 1.3.3 外部样式 1.3.4 使用@import引入外部样式文件 1.3.5 叠层样式优先级 1.3.6 注释"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/space-in-HTMLpng.jpg"><meta property="article:author" content="Smith"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/space-in-HTMLpng.jpg"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://smithhs.cn/2021/08/02/2021-08-02-CSS/"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//npm.onmicrosoft.cn"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.14/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":240},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CSS',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-14 16:23:14',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/d20f536c64d06e5fcf4bfe2ec5dc25d.jpg"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>if (GLOBAL_CONFIG.preloader.source == "2" || GLOBAL_CONFIG.preloader.source == "3") {
+  const loadingPercentage = document.getElementById("loading-percentage");
+  let loadingPercentageTimer = setInterval(function() {
+    var progressBar = document.querySelector(".pace-progress");
+    if (!progressBar) return
+    var currentValue = progressBar.getAttribute("data-progress-text");
+    if (currentValue !== loadingPercentage.textContent) {
+      loadingPercentage.textContent = currentValue;
+      if (currentValue === "100%") {
+        clearInterval(loadingPercentageTimer);
+      }
+    }
+  }, 100);
+}
+
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://smithhs.cn/" title="博客" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" href="http://robot.onliu.cn/" title="Robot" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/cupfox.png" alt="Robot"/><span class="back-menu-item-text">Robot</span></a><a class="back-menu-item" href="http://res.onliu.cn" title="Sale" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://alandodo-1315761622.cos.ap-beijing.myqcloud.com/blog-tuce/tubiao.jpg" alt="Sale"/><span class="back-menu-item-text">Sale</span></a><a class="back-menu-item" href="http://se.onliu.cn/" title="资源共享" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://alandodo-1315761622.cos.ap-beijing.myqcloud.com/blog/x126.png" alt="资源共享"/><span class="back-menu-item-text">资源共享</span></a><a class="back-menu-item" href="https://github.com/Smithhss" title="Github" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/GitHub.png" alt="Github"/><span class="back-menu-item-text">Github</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">Smith</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于我</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/1.jpg" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/1.jpg"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/2.jpg" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/2.jpg"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Android-Studio/" style="font-size: 1.05rem;">Android Studio<sup>1</sup></a><a href="/tags/App/" style="font-size: 1.05rem;">App<sup>2</sup></a><a href="/tags/Butterfly/" style="font-size: 1.05rem;">Butterfly<sup>1</sup></a><a href="/tags/C/" style="font-size: 1.05rem;">C++<sup>1</sup></a><a href="/tags/CSS/" style="font-size: 1.05rem;">CSS<sup>1</sup></a><a href="/tags/Cisco-Packet-Tracer/" style="font-size: 1.05rem;">Cisco Packet Tracer<sup>1</sup></a><a href="/tags/Easypan/" style="font-size: 1.05rem;">Easypan<sup>2</sup></a><a href="/tags/FurtherMathematics/" style="font-size: 1.05rem;">FurtherMathematics<sup>1</sup></a><a href="/tags/GPT/" style="font-size: 1.05rem;">GPT<sup>1</sup></a><a href="/tags/Git/" style="font-size: 1.05rem;">Git<sup>1</sup></a><a href="/tags/HTML/" style="font-size: 1.05rem;">HTML<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 1.05rem;">Hexo<sup>1</sup></a><a href="/tags/Java/" style="font-size: 1.05rem;">Java<sup>6</sup></a><a href="/tags/JavaWeb/" style="font-size: 1.05rem;">JavaWeb<sup>2</sup></a><a href="/tags/Jrebel/" style="font-size: 1.05rem;">Jrebel<sup>1</sup></a><a href="/tags/LeetCode/" style="font-size: 1.05rem;">LeetCode<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>2</sup></a><a href="/tags/Markdown/" style="font-size: 1.05rem;">Markdown<sup>1</sup></a><a href="/tags/Maven/" style="font-size: 1.05rem;">Maven<sup>2</sup></a><a href="/tags/MyBatis-Plus/" style="font-size: 1.05rem;">MyBatis-Plus<sup>1</sup></a><a href="/tags/Mysql/" style="font-size: 1.05rem;">Mysql<sup>1</sup></a><a href="/tags/Navicat/" style="font-size: 1.05rem;">Navicat<sup>1</sup></a><a href="/tags/NoSql/" style="font-size: 1.05rem;">NoSql<sup>1</sup></a><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>3</sup></a><a href="/tags/Spring/" style="font-size: 1.05rem;">Spring<sup>2</sup></a><a href="/tags/VMware/" style="font-size: 1.05rem;">VMware<sup>2</sup></a><a href="/tags/WeChat/" style="font-size: 1.05rem;">WeChat<sup>1</sup></a><a href="/tags/YouHou/" style="font-size: 1.05rem;">YouHou<sup>1</sup></a><a href="/tags/books/" style="font-size: 1.05rem;">books<sup>1</sup></a><a href="/tags/butterfly/" style="font-size: 1.05rem;">butterfly<sup>1</sup></a><a href="/tags/clash/" style="font-size: 1.05rem;">clash<sup>1</sup></a><a href="/tags/project/" style="font-size: 1.05rem;">project<sup>4</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.05rem;">前端<sup>1</sup></a><a href="/tags/%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem;">开发框架<sup>1</sup></a><a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" style="font-size: 1.05rem;">开发环境<sup>1</sup></a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">操作系统<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">数据结构与算法<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 1.05rem;">计算机组成原理<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.05rem;">计算机网络<sup>1</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 1.05rem;">软件工程<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="anzhiyu.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/Front/">Front</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/CSS/" tabindex="-1"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>CSS</span></a></span></div></div><h1 class="post-title">CSS</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="post-meta-icon anzhiyufont anzhiyu-icon-calendar-days"></i><span class="post-meta-label">发表于</span><time datetime="2021-08-01T21:34:54.000Z" title="发表于 2021-08-02 05:34:54">2021-08-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">9k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>38分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="CSS"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为石家庄"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>石家庄</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/space-in-HTMLpng.jpg"></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>目录</strong></p>
+<p><a href="#t0">1 css基础知识</a></p>
+<p><a href="#t1">1.1基础知识</a></p>
+<p><a href="#t2">1.1 概述</a></p>
+<p><a href="#t3">1.2 优势</a></p>
+<p><a href="#t4">1.3应用css的步骤</a></p>
+<p><a href="#t5">1.2 css基本语法</a></p>
+<p><a href="#t6">1.3 css使用方法</a></p>
+<p><a href="#t7">1.3.1 内嵌样式</a></p>
+<p><a href="#t8">1.3.2 内部样式</a></p>
+<p><a href="#t9">1.3.3 外部样式</a></p>
+<p><a href="#t10">1.3.4 使用@import引入外部样式文件</a></p>
+<p><a href="#t11">1.3.5 叠层样式优先级</a></p>
+<p><a href="#t12">1.3.6 注释</a></p>
+<p><a href="#t13">2 CSS选择器</a></p>
+<p><a href="#t14">2.1 元素选择器</a></p>
+<p><a href="#t15">2.2 类选择器</a> </p>
+<p><a href="#t16">2.3 ID选择器</a></p>
+<p><a href="#t17">2.4 包含选择器</a></p>
+<p><a href="#t18">2.5 组合选择器</a></p>
+<p> <a href="#t19">2.6 父子选择器</a></p>
+<p><a href="#t20">2.6 相邻选择器</a></p>
+<p><a href="#t21">2.8 属性选择器</a></p>
+<p><a href="#t22">2.9   通用选择器</a></p>
+<p><a href="#t23">3 CSS基本属性</a></p>
+<p> <a href="#t24">3.1 字体属性</a></p>
+<p> <a href="#t25">3.2 文本属性</a></p>
+<p><a href="#t26">3.3 背景属性</a></p>
+<p><a href="#t27">3.3.1 常见背景属性</a></p>
+<p><a href="#t28">3.3.2 css3背景渐变属性</a></p>
+<p> <a href="#t29">3.4边框属性</a></p>
+<p><a href="#t30">3.5 列表属性</a></p>
+<p> <a href="#t31">3.6 鼠标属性</a></p>
+<p><a href="#t32">4 伪类和伪元素</a></p>
+<p><a href="#t33">4.1伪类</a></p>
+<p><a href="#t34">4.2 伪元素</a></p>
+<hr>
+<h2 id="1-css基础知识"><a href="#1-css基础知识" class="headerlink" title="1 css基础知识"></a>1 css基础知识</h2><h3 id="1-1基础知识"><a href="#1-1基础知识" class="headerlink" title="1.1基础知识"></a>1.1基础知识</h3><h4 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h4><blockquote>
+<p>Css (层叠样式表)是种格式化网页的标准方式， 用于控制设置网页的样式，并且允许CSS样式信息与网页内容(由HTML语言定义)分离的一种技术。</p>
+</blockquote>
+<h4 id="1-2-优势"><a href="#1-2-优势" class="headerlink" title="1.2 优势"></a>1.2 优势</h4><blockquote>
+<ul>
+<li>格式和结构分离：有利于格式的重用以及网页的修改与维护。</li>
+<li>精确控制页面布局：对网页实现更加精确的控制，如网页的布局，字体，颜色，背景等。</li>
+<li>实现多个网页同时更新。</li>
+</ul>
+</blockquote>
+<h4 id="1-3应用css的步骤"><a href="#1-3应用css的步骤" class="headerlink" title="1.3应用css的步骤"></a>1.3应用css的步骤</h4><p>（1）定义css样式表</p>
+<p>（2）将定义好的css样式在HTML文档中应用</p>
+<h3 id="1-2-css基本语法"><a href="#1-2-css基本语法" class="headerlink" title="1.2 css基本语法"></a>1.2 css基本语法</h3><blockquote>
+<p>CSS的定义是由三部分组成的，包括选择符( selector)、属性( properties)、属性值（value）语法如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;    属性1:属性值1;    属性2:属性值2;    ……    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：每个属性有一个值，属性和值用冒号隔开。如果要定义不止一一个“属性:属性值”的声明时，需要用分号将每个声明分开，最后一条声明规则可以不加分号（建议每条声明的末尾都加上分号，会减少出错的可能。）</p>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1&#123;              /*标记选择器h1选中网页的所有<span class="tag">&lt;<span class="name">h1</span>&gt;</span>标记*/color :red;      /*设置文字的颜色属性为红色*/font-size:14px;  /*设置文字的大小属性为14像素*/&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：css中&#x2F;* *&#x2F;是注释。</p>
+<p>如果属性值由多个单词组成是 需要用引号括起来，例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h2&#123;    font-family: &#x27;New Century Schoolbook&#x27; ;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ul>
+<li>包含空格不会影响CSS在浏览器中的工作效果</li>
+<li>CSS对大小写是不敏感的</li>
+<li>如果涉及与HTML文档一起工作， class类选择器和id选择器对名称的大小写是敏感的。</li>
+</ul>
+<p>需要使用几个属性值进行定义，每个属性值之间用逗号隔开，例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h2&#123;    font-family: Times, &#x27; New Century Schoolbook&#x27; ，Georgia;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="1-3-css使用方法"><a href="#1-3-css使用方法" class="headerlink" title="1.3 css使用方法"></a>1.3 css使用方法</h3><blockquote>
+<p>主要有四种方法：内嵌样式、内部样式、使用<link>标记链接外部样式表、使用CSS的@import标记导入外部样式文件。</p>
+</blockquote>
+<h4 id="1-3-1-内嵌样式"><a href="#1-3-1-内嵌样式" class="headerlink" title="1.3.1 内嵌样式"></a>1.3.1 内嵌样式</h4><blockquote>
+<p>内嵌样式指将CSS规则混合在HTML标记中使用的方式。CSS规则作为HTML标记style属性的属性值。例如:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;color:red; font-size: 28px;&quot;</span>&gt;</span>淘宝<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>样式使用<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.taobao.com&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color:red; font-size: 28px;&quot;</span>&gt;</span>淘宝<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span>	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.taobao.com&quot;</span> &gt;</span>淘宝<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：内嵌样式只対其所在的标记起作用，其他的同类标记不受影响。不建以使用这种方法。</p>
+</blockquote>
+<h4 id="1-3-2-内部样式"><a href="#1-3-2-内部样式" class="headerlink" title="1.3.2 内部样式"></a>1.3.2 内部样式</h4><blockquote>
+<p>内嵌样式只能定义某一个标记的样式，如果要对整个网页文档的某个标记进行特定样式定义时，就需要使用内部样式。内部样式一般是在<head>标记中并使用<style>标记进行定义。语法格式如下所示:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">    选择器&#123;        属性:属性值;        属性:属性值;        ……    &#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>样式使用<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-id">#p</span>&#123;			<span class="attribute">color</span>: red;			<span class="attribute">font-size</span>: <span class="number">28px</span>;		&#125; </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.taobao.com&quot;</span> <span class="attr">id</span>=<span class="string">&quot;p&quot;</span>&gt;</span>淘宝<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span>	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.taobao.com&quot;</span> &gt;</span>淘宝<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="1-3-3-外部样式"><a href="#1-3-3-外部样式" class="headerlink" title="1.3.3 外部样式"></a>1.3.3 外部样式</h4><blockquote>
+<p>外部样式是将样式表以单独的文件(文件后缀一般为.css )存放，让网站的所有网页通过<link>标记均可引用此样式文件。</p>
+<p>优点：</p>
+<ul>
+<li>降低网站的维护成本</li>
+<li>让网站拥有统一的风格。</li>
+</ul>
+<p>注意：<link>标记一般放到页面的<head>区域内。使用<link>标记引人外部样式文件的语法格式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot; 样式表源文件地址:&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>href属性中的外部样式文件地址的填写方法和超链接的链接地址的写法一样;</p>
+<p>rel&#x3D;”stylesheet”的作用是告诉浏览器链接的是一个样式表文件，是固定格式;</p>
+<p>type&#x3D;”text&#x2F;css”表示传输的文本类型为样式表类型文件，也是固定格式。</p>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>样式使用<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;css3-3.css&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.taobao.com&quot;</span> <span class="attr">id</span>=<span class="string">&quot;p&quot;</span>&gt;</span>淘宝<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span>	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.taobao.com&quot;</span> &gt;</span>淘宝<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>外部样式文件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#p&#123;     color:red;     font-size:20px;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>内嵌样式、内部样式、外部样式之间的本质区别:<br>(1)外部样式用于定义整个网站样式。<br>(2)内部样式用于定义整个网页样式。<br>(3)内嵌样式用于定义某个标记样式。</p>
+</blockquote>
+<h4 id="1-3-4-使用-import引入外部样式文件"><a href="#1-3-4-使用-import引入外部样式文件" class="headerlink" title="1.3.4 使用@import引入外部样式文件"></a>1.3.4 使用@import引入外部样式文件</h4><blockquote>
+<p>格式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import url(样式表源文件地址)</span><br></pre></td></tr></table></figure>
+
+<p>注意：@import只能放在<style>标记内使用，而且必须放在其他CSS样式之前。其中，urI为关键字，不能随便更改。</p>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>样式使用<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="keyword">@import</span> url(<span class="string">&quot;css3-3.css&quot;</span>)	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.taobao.com&quot;</span> <span class="attr">id</span>=<span class="string">&quot;p&quot;</span>&gt;</span>淘宝<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span>	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://www.taobao.com&quot;</span> &gt;</span>淘宝<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>外部样式文件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#p&#123;     color:red;     font-size:20px;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="1-3-5-叠层样式优先级"><a href="#1-3-5-叠层样式优先级" class="headerlink" title="1.3.5 叠层样式优先级"></a>1.3.5 叠层样式优先级</h4><blockquote>
+<p>CSS层叠样式表中的层叠指样式的优先级，当内嵌样式、内部样式、外部样式都对某个HTML标记进行了样式定义，即当样式定义发生冲突时，以优先级高的为最终显示效果。</p>
+</blockquote>
+<blockquote>
+<p>浏览器会按照不同的方式来确定样式的优先级，其原则如下。<br>(1)按照样式来源不同，其优先级:内嵌样式&gt;内部样式&gt;外部样式&gt;浏览器默认样式</p>
+<p>(2)按照选择器不同，其优先级:<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=id%E9%80%89%E6%8B%A9%E5%99%A8&spm=1001.2101.3001.7020">id选择器</a>&gt;class类选择器&gt;元素选择器<br>(3)当样式定义的优先级相同时，取后面定义的样式。</p>
+</blockquote>
+<h4 id="1-3-6-注释"><a href="#1-3-6-注释" class="headerlink" title="1.3.6 注释"></a><strong>1.3.6 注释</strong></h4><blockquote>
+<p>注释用来说明所写代码的含义，对读者读懂这些代码很有帮助。CSS用C&#x2F;C++的语法进注释，其中“&#x2F;*”放在注释的开始处，“*&#x2F;” 放在结束处。</p>
+<p>例如:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1&#123;              /*标记选择器h1选中网页的所有<span class="tag">&lt;<span class="name">h1</span>&gt;</span>标记*/color :red;      /*设置文字的颜色属性为红色*/font-size:14px;  /*设置文字的大小属性为14像素*/&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="2-CSS选择器"><a href="#2-CSS选择器" class="headerlink" title="2 CSS选择器"></a>2 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=CSS%E9%80%89%E6%8B%A9%E5%99%A8&spm=1001.2101.3001.7020">CSS选择器</a></h2><h3 id="2-1-元素选择器"><a href="#2-1-元素选择器" class="headerlink" title="2.1 元素选择器"></a>2.1 元素选择器</h3><blockquote>
+<p>元素选择器最常见的是CSS选择器，又称为类型选择器。</p>
+<p>元素选择器基本语法格式如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTML元素名&#123;        样式属性:属性值;        样式属性:属性值;        ……&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>实例：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h2&#123;    color:blue;    font-size:26px;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>元素选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">h2</span>&#123;			<span class="attribute">color</span>: red;		&#125;		<span class="selector-tag">span</span>&#123;			<span class="attribute">color</span>: blue;			<span class="attribute">font-size</span>: <span class="number">48px</span>;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span> 	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h2</span>&gt;</span> 	<span class="tag">&lt;<span class="name">h3</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h3</span>&gt;</span> 	<span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/9c12eeb7ba81160815a1c4870804e0b3png.jpg"></p>
+<h3 id="2-2-类选择器"><a href="#2-2-类选择器" class="headerlink" title="2.2 类选择器"></a>2.2 类选择器</h3><blockquote>
+<p>元素选择器可以设置网页中所有相同标记的统一格式，但如果需要对相同标记中某些个别标记做其他效果设置时，使用HTML元素标记就无法实现。<br>类(class )选择器允许以一种独立于文档元素的方式来指定样式。该选择器可以单独使用，也可以与其他元素结合使用。语法格式如下所示:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.类选择器名称&#123;    样式属性:属性值;    样式属性:属性值;    ……&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意:类选择器的定义是以英文圆点开头。类选择器的名称可以任意(但是不能用中文)但最好以驼峰方式命名。</p>
+<p>类选择器的使用语法格式如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; 标记名称 class=&quot;类选择器名称1 类选择器名称2 ...&quot;</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;myBoxColor myBoxBackground&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里定义了两个类选择器,在HTML的div标记使用这两个类选择器，在使用两个以上的类选择器时，其名称之间要用空格分隔，最终这两选择器定义的样式会叠加，并在div标记中呈现。如果在两个类选择器中都对同一个样式属进行了样式定义，则最后定义的样式起作用。</p>
+</blockquote>
+<p><strong>例：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>类选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-class">.p1</span>&#123;			<span class="attribute">color</span>: red;			<span class="attribute">font-size</span>: <span class="number">25px</span>;		&#125;		<span class="selector-class">.p2</span>&#123;				<span class="attribute">font-size</span>: <span class="number">36px</span>;			<span class="attribute">text-decoration</span>: underline;			<span class="attribute">color</span>: green;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;p1&quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">p2</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h2</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/0f1a45057c054b33b6c4c2af600eedf8png.jpg"></p>
+<h3 id="2-3-ID选择器"><a href="#2-3-ID选择器" class="headerlink" title="2.3 ID选择器"></a>2.3 ID选择器</h3><blockquote>
+<p>ID选择器类似于类选择器，但也有一些差别。</p>
+<p>相同点：类选择器和ID选择器在定义和使用时都是区分大小写。</p>
+<p>主要区别：<br>(1)定义上ID选择器前面使用“#”号，而不是类选择器的点。</p>
+<p>(2) ID选择器在引用时不是通过class属性， 而是使用id属性。<br>(3)在一个HTML文档中，ID选择器仅允许使用一次，而类选择器可以使用多次。<br>(4) ID选择器不能结合使用，因为ID属性不允许有以空格分隔的词列表。</p>
+<p>ID选择器的语法格式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#ID选择器名称&#123;    样式属性:属性值;    样式属性:属性值;    ......&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用ID选择器的语法格式如下所示:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;标记名称id=&quot;ID选择器名称&quot; &gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p> <strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>类选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-id">#p1</span>&#123;			<span class="attribute">color</span>: red;			<span class="attribute">font-size</span>: <span class="number">25px</span>;		&#125;		<span class="selector-id">#p2</span>&#123;				<span class="attribute">font-size</span>: <span class="number">36px</span>;			<span class="attribute">text-decoration</span>: underline;			<span class="attribute">color</span>: green;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">&quot;p1&quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>	<span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">p2</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h2</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：和类选择器运行一样</strong></p>
+<h3 id="2-4-包含选择器"><a href="#2-4-包含选择器" class="headerlink" title="2.4 包含选择器"></a>2.4 包含选择器</h3><blockquote>
+<p>包含选择器又称后代选择器，该选择器可以选择作为某元素后代的元素。</p>
+<p>语法格式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">祖先选择器 后代选择器&#123;    样式属性: 属性值;    样式属性: 属性值;    ......&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：祖先选择器和后代选择器之间必须用空格进行分隔。祖先选择器可以包括一个或多个用空格分隔的选择器。</p>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h2 p span&#123; color:red; font-size:28px; &#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>例：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>包含选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">h2</span> <span class="selector-tag">span</span>&#123;			<span class="attribute">color</span>: red;			<span class="attribute">font-size</span>: <span class="number">48px</span>;		&#125;			</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>hello <span class="tag">&lt;<span class="name">span</span>&gt;</span>word!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span>	<span class="tag">&lt;<span class="name">h3</span>&gt;</span>hello <span class="tag">&lt;<span class="name">span</span>&gt;</span>word!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span>	<span class="tag">&lt;<span class="name">h4</span>&gt;</span>hello <span class="tag">&lt;<span class="name">span</span>&gt;</span>word!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h4</span>&gt;</span>	<span class="tag">&lt;<span class="name">span</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/91956b9e4c1b52fe723e79fca8528b4apng.jpg"></p>
+<h3 id="2-5-组合选择器"><a href="#2-5-组合选择器" class="headerlink" title="2.5 组合选择器"></a>2.5 组合选择器</h3><blockquote>
+<p>组合选择器也称为并集选择器，是各个选择器通过逗号连接而成的，任何形式的选择器(包括标记选择器、类选择器及id选择器等)都可以作为组合选择器的一部分。</p>
+<p>组合选择器的语法格式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器1，选择器2，.... ,选择器n&#123;    样式属性:属性值;    样式属性:属性值;    ......&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>组合选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">p</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">span</span>&#123;			<span class="attribute">color</span>: red;			<span class="attribute">font-size</span>: <span class="number">28px</span>;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>	<span class="tag">&lt;<span class="name">h3</span>&gt;</span>hello world!<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>	<span class="tag">&lt;<span class="name">h4</span>&gt;</span>hello world!<span class="tag">&lt;/<span class="name">h4</span>&gt;</span>	<span class="tag">&lt;<span class="name">h5</span>&gt;</span>hello world!<span class="tag">&lt;/<span class="name">h5</span>&gt;</span>	<span class="tag">&lt;<span class="name">span</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span> <span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/a1547cd5baccc050c71863730bf49bdcpng.jpg"></p>
+<h3 id="2-6-父子选择器"><a href="#2-6-父子选择器" class="headerlink" title="2.6 父子选择器"></a>2.6 父子选择器</h3><blockquote>
+<p>不选择所有后代，只选择某个元素的子元素。父子选择器使用大于号作为选择器的分隔符。格式如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父选择器&gt;子选择器&#123;    样式属性:属性值;    样式属性:属性值;    ......&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：父选择器包含子选择器，样式只能作用在子选择器上，而不能作用到父选择器上。</p>
+</blockquote>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>父子选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">h2</span> <span class="selector-tag">span</span>&#123;			<span class="attribute">color</span>: blue;		&#125;		<span class="selector-tag">h2</span>&gt;<span class="selector-tag">span</span>&#123;			<span class="attribute">color</span>: red;			<span class="attribute">font-size</span>: <span class="number">48px</span>;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>		<span class="tag">&lt;<span class="name">h2</span>&gt;</span>hello<span class="tag">&lt;<span class="name">span</span>&gt;</span>world!<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span>		<span class="tag">&lt;<span class="name">h2</span>&gt;</span>hello <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/4dc833710212e9360dbeb7d9ba719fa0png.jpg"></p>
+<h3 id="2-6-相邻选择器"><a href="#2-6-相邻选择器" class="headerlink" title="2.6 相邻选择器"></a>2.6 相邻选择器</h3><blockquote>
+<p>如果需要选择紧接在某一个元素后的元素， 并且二者有相同的父元素，可以使用相邻选择器。相邻选择器使用加号作为选择器的分隔符，其语法格式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器1+选择器2 &#123;    样式属性:属性值;    样式属性:属性值;    ......&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>相邻选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">h2</span>+<span class="selector-tag">span</span>&#123;			<span class="attribute">color</span>: red;			<span class="attribute">font-size</span>: <span class="number">48px</span>;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>hello<span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span>	<span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span>	<span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/f2992efe5282a0e90bb23a6e10c70666png.jpg"></p>
+<h3 id="2-8-属性选择器"><a href="#2-8-属性选择器" class="headerlink" title="2.8 属性选择器"></a>2.8 属性选择器</h3><blockquote>
+<p>属性选择器是CSS3选择器，其主要作用是对带有指定属性的HTML元素进行样式设置。<br>属性选择器的语法格式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标记名称[属性选择符] &#123;    样式属性:属性值;    样式属性:属性值;    ......&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如：定义具有href属性的超链接元素，让文字显示为红色，语法格式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[href] &#123;    color:red;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性选择器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>选择器</td>
+</tr>
+<tr>
+<td>[attribute]</td>
+</tr>
+<tr>
+<td>[attribute~ &#x3D;value]</td>
+</tr>
+<tr>
+<td>[attribute&#x3D;value]</td>
+</tr>
+<tr>
+<td>[attribute</td>
+</tr>
+<tr>
+<td>[attribute^&#x3D;value]</td>
+</tr>
+<tr>
+<td>[attribute$&#x3D;value]</td>
+</tr>
+<tr>
+<td>[attribute*&#x3D;value]</td>
+</tr>
+</tbody></table>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>属性选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">p</span><span class="selector-attr">[align]</span>&#123;			<span class="attribute">color</span>: red;			<span class="attribute">font-size</span>: <span class="number">38px</span>;		&#125;		<span class="selector-tag">p</span><span class="selector-attr">[align=right]</span>&#123;			<span class="attribute">color</span>: blue;			<span class="attribute">font-size</span>: <span class="number">24px</span>;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span> hello <span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span> world <span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/4e83ed0b23d68d7e21073fea05e55035png.jpg"></p>
+<h3 id="2-9-通用选择器"><a href="#2-9-通用选择器" class="headerlink" title="2.9   通用选择器"></a>2.9   通用选择器</h3><blockquote>
+<p> 通用选择器的作用就像是通配符，匹配所有可用元素。</p>
+<p>语法格式如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;    样式属性:属性值;    样式属性:属性值;    ......&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：*代表所有</p>
+</blockquote>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>通用选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		*&#123;			<span class="attribute">color</span>: red;			<span class="attribute">font-size</span>: <span class="number">36px</span>;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">h5</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h5</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span>&gt;</span> world<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">span</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/0adb373c6bdec370ce49e5d5c4c9a59epng.jpg"></p>
+<h2 id="3-CSS基本属性"><a href="#3-CSS基本属性" class="headerlink" title="3 CSS基本属性"></a>3 CSS基本属性</h2><h3 id="3-1-字体属性"><a href="#3-1-字体属性" class="headerlink" title="3.1 字体属性"></a>3.1 字体属性</h3><table>
+<thead>
+<tr>
+<th>字体属性及说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>属性</td>
+</tr>
+<tr>
+<td>font</td>
+</tr>
+<tr>
+<td>font-size</td>
+</tr>
+<tr>
+<td>font-style</td>
+</tr>
+<tr>
+<td>设置字体风格。Normal 为正常; italic 为斜体; oblique 为倾斜</td>
+</tr>
+<tr>
+<td>font weight</td>
+</tr>
+<tr>
+<td>font- family</td>
+</tr>
+</tbody></table>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>字体属性<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-id">#p1</span>&#123;			<span class="attribute">font-family</span>: Times New Roman,serif;         			<span class="comment">/*设置字体类型*/</span>			<span class="attribute">font-size</span>: <span class="number">28px</span>;			<span class="comment">/*设置字体大小*/</span>			<span class="attribute">font-weight</span>: bold;			<span class="comment">/*设置字体粗细*/</span>		&#125;		<span class="selector-id">#p2</span>&#123;			<span class="attribute">font-family</span>:Arial,sans-serif; 			<span class="attribute">font-size</span>:<span class="number">20px</span>;			<span class="attribute">font-style</span>: italic;			<span class="comment">/*设置字体风格*/</span>			<span class="attribute">font-weight</span>:lighter;		&#125;		<span class="selector-id">#p3</span>&#123;			<span class="comment">/*设置字体倾斜、加粗、大小为24像素，行高为36像素，字体为arial,sans-serif*/</span>			<span class="attribute">font</span>:oblique bold <span class="number">24px</span>/<span class="number">36px</span> arial,sans-serif;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">p1</span>&gt;</span>hello world1<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;p2&quot;</span>&gt;</span>hello world2<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;p3&quot;</span>&gt;</span>helllo world3<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/58773230c8e0fb7e8a1dee82dc8d8af5png.jpg"></p>
+<h3 id="3-2-文本属性"><a href="#3-2-文本属性" class="headerlink" title="3.2 文本属性"></a><strong>3.2 文本属性</strong></h3><blockquote>
+<p>文本属性包括阴影效果、大小写、文本缩进、对齐方式等等。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>文本属性及说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>属性</td>
+</tr>
+<tr>
+<td>color</td>
+</tr>
+<tr>
+<td>direction</td>
+</tr>
+<tr>
+<td>letter-spacing</td>
+</tr>
+<tr>
+<td>line-height</td>
+</tr>
+<tr>
+<td>text-align</td>
+</tr>
+<tr>
+<td>text-decoration</td>
+</tr>
+<tr>
+<td>text-overflow</td>
+</tr>
+<tr>
+<td>text-indent</td>
+</tr>
+<tr>
+<td>text-transform</td>
+</tr>
+<tr>
+<td>text-shadow</td>
+</tr>
+<tr>
+<td>unicode-bidi</td>
+</tr>
+<tr>
+<td>word-spacing</td>
+</tr>
+<tr>
+<td>white-space</td>
+</tr>
+</tbody></table>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>文本属性<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-id">#one</span>&#123;			<span class="attribute">text-align</span>: center;			<span class="comment">/*文字左对齐*/</span>			<span class="attribute">word-spacing</span>: <span class="number">30px</span>;			<span class="comment">/*单词之间的间距为30像素*/</span> 		&#125;		<span class="selector-id">#two</span>&#123;			<span class="attribute">text-align</span>: center;			<span class="comment">/*文字居中对齐*/</span>			<span class="attribute">word-spacing</span>: -<span class="number">10px</span>;			<span class="comment">/*单词之间的间距为-15像素*/</span>		&#125;		<span class="selector-id">#three</span>&#123;			<span class="attribute">text-align</span>: center;			<span class="comment">/*文字右对齐*/</span>			<span class="attribute">letter-spacing</span>: <span class="number">5px</span>;			<span class="comment">/*字母之间距离为28个像素*/</span>			<span class="attribute">text-decoration</span>: underline;			<span class="comment">/*文字修饰：加下划线*/</span>			<span class="attribute">text-transform</span>: uppercase;			<span class="comment">/*文字全部大写*/</span>		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">one</span>&gt;</span>hello  world<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;two&quot;</span>&gt;</span>hello  world<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;three&quot;</span>&gt;</span>hello  world<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/ff223f7ab2b64cf29dfc88ad9008febepng.jpg"></p>
+<blockquote>
+<p>text-shadow属性是css3的属性，是向文本添加一个或多个阴影，该属性是用逗号分割的<br>阴影列表，每个阴影由两个或三个长度值和一个可选的颜色值进行规定， 省略的长度是0</p>
+<p>语法格式定义如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text- shadow: h-shadow v-shadow blur color[,h- shadow v-shadow blur cglore];</span><br></pre></td></tr></table></figure>
+
+<p>其中，h-shadow是必须定义的，表示水平阴影的位置，如果是正值则表示阴影向右位移的距离，如果是负值则表示阴影向左位移的距离:v-shadow是必须定义的，表示垂直阴影的位置，如果是正值则表示阴影向下位移的距离，如果是负值则表示阴影向上位移的距离;blur是可选项，表示阴影的模糊距离;color是可选项，表示阴影的颜色。</p>
+</blockquote>
+<p> <strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>文本属性<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">h2</span>&#123;			<span class="attribute">font-size</span>: <span class="number">50px</span>;			<span class="attribute">font-family</span>: 黑体;			<span class="attribute">text-shadow</span>: red <span class="number">6px</span> -<span class="number">6px</span> <span class="number">6px</span>,yellow <span class="number">16px</span> -<span class="number">16px</span> <span class="number">10px</span>;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">h2</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/38135b901311b4acdfda01febeffb628png.jpg"></p>
+<h3 id="3-3-背景属性"><a href="#3-3-背景属性" class="headerlink" title="3.3 背景属性"></a>3.3 背景属性</h3><h4 id="3-3-1-常见背景属性"><a href="#3-3-1-常见背景属性" class="headerlink" title="3.3.1 常见背景属性"></a>3.3.1 常见背景属性</h4><blockquote>
+<p>CSS背景属性主要用于设置对象的背景颜色、背景图片、背景图片的重复性、背景图片的位置等</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>常见的背景属性及说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>属性</td>
+</tr>
+<tr>
+<td>background</td>
+</tr>
+<tr>
+<td>background-attachment</td>
+</tr>
+<tr>
+<td>background-color</td>
+</tr>
+<tr>
+<td>background-image</td>
+</tr>
+<tr>
+<td>background-position</td>
+</tr>
+<tr>
+<td>background-repeat</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>background-clip属性规定背景的绘制区域，该属性是CSS3的属性，主要用于设置背景图像的裁剪区域，其基本语法格式是:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-clip : border-box|padding-box|content-box;</span><br></pre></td></tr></table></figure>
+
+<p>其中，border-box是默认值，表示从边框区域向外裁剪背景;padding-box表示从内边距区域向外裁剪背景;content-box表示从内容区域向外裁剪背景。</p>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>背景裁剪属性<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">div</span>&#123;			<span class="attribute">width</span>: <span class="number">400px</span>;             <span class="comment">/*设置div块宽度为400px*/</span>			<span class="attribute">height</span>: <span class="number">230px</span>;				 <span class="comment">/*设置div块高度为230px*/</span>			<span class="attribute">padding</span>: <span class="number">25px</span>;			 <span class="comment">/*设置div块内边距为25px*/</span>			<span class="attribute">background-color</span>: <span class="number">#00ff00</span>;	 <span class="comment">/*设置div块背景颜色*/</span>			<span class="attribute">background-clip</span>: content-box;     <span class="comment">/*设置div块裁剪属性为从内容区域向外裁剪*/</span>			<span class="attribute">border</span>: <span class="number">10px</span> solid black;      <span class="comment">/* 设置div块边框为10px、实心线、黑色*/</span>		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">div</span>&gt;</span>		hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world 	<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/982d0d4596b0b123f6259ca5cdf43dd2png.jpg"></p>
+</blockquote>
+<h4 id="3-3-2-css3背景渐变属性"><a href="#3-3-2-css3背景渐变属性" class="headerlink" title="3.3.2 css3背景渐变属性"></a>3.3.2 css3背景渐变属性</h4><blockquote>
+<p>CSS3的渐变属性可以使两个或多个指定的颜色之间显示平稳的过渡，CSS3定义两种类型的渐变:一种是线性渐变， 即向下&#x2F;向上&#x2F;向左&#x2F;向右&#x2F;对角方向;另一种是径向渐变，及由中心定义。</p>
+</blockquote>
+<p><strong>1.线性渐变</strong></p>
+<blockquote>
+<p>必须至少定义两种颜色节点</p>
+<p>语法格式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background:linear-gradient(direction, color-stop1, color-top2,...)</span><br></pre></td></tr></table></figure>
+
+<p>其中，direction指明线性渐变的方向。默认是从上到下。</p>
+<p><strong>例:从顶部开始的线性渐变，起点是红色，慢慢过渡到黄色:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(red, yellow);</span><br></pre></td></tr></table></figure>
+
+<p><strong>从左到右的线性渐变:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(to right, red, yellow);</span><br></pre></td></tr></table></figure>
+
+<p><strong>例：从左上角开始到右下角的线性渐变。起点是红色，慢慢过渡到黄色:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blackground: linear-gradient(to bottom right, red ，yellow);</span><br></pre></td></tr></table></figure>
+
+<p>渐变方向上可以做更多的控制，可以定义一个 角度，而不用预定义方向( to bottom、to top、 to right、to left、to bottom right,等等)。</p>
+<p><strong>例：45度的线性渐变。起点是红色， 慢慢过渡到黄色:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: linear-gradient(45deg, red 30%， yellow 70%)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>2. 径向渐变</strong></p>
+<blockquote>
+<p>必须至少定义两种颜色节点</p>
+<p>shape参数定义形状，其值可以是circle或ellipse。其中，circle表示圆形，ellipse表示椭圆形。默认值是ellipse。</p>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: radial-gradient(circle, red, yellow, green);</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下：渐变的形状是ellipse，渐变的大小是farthest-corner (表示到最远的角落)其定义的基本语法如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background:radial-gradient(shape,start-color,..., last-color);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>3. 重复径向渐变</strong></p>
+<blockquote>
+<p> repeating-radial-gradient()函数用于重复径向渐变，该函数的所有参数及语法与径向渐变相同。</p>
+</blockquote>
+<p><strong>例：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>背景<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		*&#123;			<span class="attribute">padding</span>: <span class="number">0</span>;		&#125;		<span class="selector-id">#box1</span>&#123;			<span class="attribute">width</span>: <span class="number">100px</span>;			<span class="attribute">height</span>: <span class="number">100px</span>;			<span class="attribute">border-radius</span>: <span class="number">50%</span>;              <span class="comment">/*  设置DIV块的边框半径为50%，即圆*/</span>			<span class="comment">/*div球背景色渐变从左上到右下，即45度，其中红色占30%，黄色占60%*/</span>			<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(<span class="number">45deg</span>,<span class="number">#f00</span> <span class="number">30%</span>,<span class="number">#ff0</span> <span class="number">60%</span>);		&#125;		<span class="selector-id">#box2</span>&#123;			<span class="attribute">width</span>: <span class="number">100px</span>;			<span class="attribute">height</span>: <span class="number">100px</span>;			<span class="attribute">border-radius</span>: <span class="number">50%</span>;			<span class="comment">/*背景重复径向渐变，圆形，且有红黄蓝三色*/</span>			<span class="attribute">background-image</span>: <span class="built_in">repeating-radial-gradient</span>(circle at <span class="number">50%</span> <span class="number">50%</span>,red,yellow <span class="number">10%</span>,blue <span class="number">15%</span>);		&#125;		<span class="selector-id">#box3</span>&#123;			<span class="attribute">width</span>: <span class="number">100px</span>;			<span class="attribute">height</span>: <span class="number">100px</span>;			<span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(<span class="number">45deg</span>,red <span class="number">30%</span>,yellow <span class="number">70%</span>);		&#125;		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/bd7b93d938022c0e57f8665e23085ab6png.jpg"></p>
+<h3 id="3-4边框属性"><a href="#3-4边框属性" class="headerlink" title="3.4边框属性"></a>3.4边框属性</h3><blockquote>
+<p>CSS边框属性可以设置对象边框的颜色、样式以及宽度。使用对象的边框属性之<br>必须先设定对象的高度及宽度。语法格式如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border :边框宽度 边框样式 边框颜色</span><br></pre></td></tr></table></figure>
+
+<p>注意：border-width属性可以单独设置边框宽度;border-style属性可以单独设边框样式;border-color属性可以单独设置边框颜色。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>边框样式的取值及说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>边框样式</td>
+</tr>
+<tr>
+<td>none</td>
+</tr>
+<tr>
+<td>double</td>
+</tr>
+<tr>
+<td>hidden</td>
+</tr>
+<tr>
+<td>groove</td>
+</tr>
+<tr>
+<td>dotted</td>
+</tr>
+</tbody></table>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>边框样式<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">p</span><span class="selector-class">.dotted</span> &#123;<span class="attribute">border-style</span>: dotted;&#125;		<span class="selector-tag">p</span><span class="selector-class">.dashed</span>&#123;<span class="attribute">border-style</span>: dashed;&#125;		<span class="selector-tag">p</span><span class="selector-class">.solid</span> &#123;<span class="attribute">border-style</span>:solid ;&#125;		<span class="selector-tag">p</span><span class="selector-class">.double</span> &#123;<span class="attribute">border-style</span>:double ;&#125;		<span class="selector-tag">p</span><span class="selector-class">.groove</span>&#123;<span class="attribute">border-style</span>: groove;&#125;		<span class="selector-tag">p</span><span class="selector-class">.ridge</span>&#123;<span class="attribute">border-style</span>:ridge ;&#125;		<span class="selector-tag">p</span><span class="selector-class">.inset</span> &#123;<span class="attribute">border-style</span>:inset ;&#125;		<span class="selector-tag">p</span><span class="selector-class">.outset</span> &#123;<span class="attribute">border-style</span>: outset;&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;dotted&quot;</span>&gt;</span>A dotted border<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;dashed&quot;</span>&gt;</span>A dashed border<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;solid&quot;</span>&gt;</span>A solid border<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;double&quot;</span>&gt;</span>A double border<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;groove&quot;</span>&gt;</span>A groove border<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;ridge&quot;</span>&gt;</span>A ridge border<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;inset&quot;</span>&gt;</span>An inset border<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;outset&quot;</span>&gt;</span>An outset border<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/de78080dad7abd7caecd84e3e2d508capng.jpg"></p>
+<blockquote>
+<p>在CSS3中可以通过border-radius属性为元素增加圆角边框，语法如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius :像素值|百分比</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>边框样式<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-id">#circle</span>&#123;			<span class="attribute">width</span>: <span class="number">110px</span>;			<span class="attribute">height</span>: <span class="number">110px</span>;			<span class="attribute">border-radius</span>: <span class="number">50%</span>;          			<span class="attribute">border</span>: <span class="number">10px</span> solid red;			<span class="attribute">background</span>: yellow;		&#125;		<span class="selector-id">#circle2</span>&#123;			<span class="attribute">width</span>: <span class="number">110px</span>;			<span class="attribute">height</span>: <span class="number">110px</span>;			<span class="attribute">border-radius</span>: <span class="number">30px</span>;   			<span class="attribute">border</span>: <span class="number">10px</span> solid red;			<span class="attribute">background</span>: yellow;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;circle&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;circle2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/74c658d11b9262b55aac55fa17ca307apng.jpg"></p>
+<h3 id="3-5-列表属性"><a href="#3-5-列表属性" class="headerlink" title="3.5 列表属性"></a>3.5 列表属性</h3><blockquote>
+<p>常用的列表属性:list-style-type 、list-style-image、 list-style-position以及list-style<br>其中，list-style-type属性用于设置列表项标记的类型，主要有disp (实心圆)、circle (空心圆)、square (实心方块)、none (不使用项目符号) ;list-styl-image属性用于设置使用什么图像作为列表符号;list-style-position属t用来指定列表符号的显示位置，当值为outside时， 表示将列表符号放在文本块之外，该值为默认值，当值为inside时，表示将列表符号放在文本块之内。</p>
+</blockquote>
+<p> <strong>例:制作一个横向导航菜单</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>		<span class="tag">&lt;<span class="name">title</span>&gt;</span>列表样式<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-id">#box</span>&#123;			<span class="attribute">background-color</span>: pink;           <span class="comment">/*设置背景颜色*/</span>			<span class="attribute">margin</span>: <span class="number">0</span> auto;                  <span class="comment">/*设置div块的标记自动水平居中*/</span>			<span class="attribute">height</span>: <span class="number">40px</span>;                   <span class="comment">/*  设置高度属性为40像素*/</span>		&#125;		<span class="selector-id">#box</span> <span class="selector-tag">ul</span>&#123;			<span class="attribute">list-style</span>: none;                     <span class="comment">/*   设置列表显示风格为无，即不显示类表标记*/</span>		&#125;		<span class="selector-id">#box</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;			<span class="attribute">width</span>: <span class="number">80px</span>;			<span class="attribute">height</span>: <span class="number">40px</span>;			<span class="attribute">text-align</span>: center;    <span class="comment">/* 设置列表元素内的文字水平方向居中*/</span>			<span class="attribute">line-height</span>: <span class="number">40px</span>;     <span class="comment">/* 设置列表元素内的文字垂直方向居中*/</span>			<span class="attribute">float</span>: left;           <span class="comment">/* 设置列表元素浮动，目的是把列表元素水平排列*/</span>		&#125;		<span class="selector-id">#box</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-class">.strong</span>&#123;			<span class="attribute">font-weight</span>: bold;     <span class="comment">/*设置选中列表元素内的文字加粗显示*/</span>		&#125;		<span class="selector-id">#box</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:hover</span>&#123;          <span class="comment">/*  鼠标指针放到li标记时Li所显示的样式*/</span>			<span class="attribute">background-color</span>: red;      			<span class="attribute">cursor</span>: pointer;         <span class="comment">/*设置鼠标指针为手性*/</span> 					&#125;		<span class="selector-id">#box</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;            <span class="comment">/*选中#BOX内的ul内的所有a标记*/</span>			<span class="attribute">text-decoration</span>: none;    <span class="comment">/*超链接指针文字无下划线*/</span>					&#125;		<span class="selector-id">#box</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">a</span>&#123;          <span class="comment">/*选中鼠标所在的li元素上的a标记*/</span>			<span class="attribute">text-decoration</span>: underline;       <span class="comment">/*超链接指针文字有下划线*/</span>		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">ul</span>&gt;</span>	<span class="tag">&lt;<span class="name">li</span>&gt;</span>机票<span class="tag">&lt;/<span class="name">li</span>&gt;</span>	<span class="tag">&lt;<span class="name">li</span>&gt;</span>火车票<span class="tag">&lt;/<span class="name">li</span>&gt;</span>	<span class="tag">&lt;<span class="name">li</span>&gt;</span>汽车票<span class="tag">&lt;/<span class="name">li</span>&gt;</span>	<span class="tag">&lt;<span class="name">li</span>&gt;</span>船票<span class="tag">&lt;/<span class="name">li</span>&gt;</span>	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span>	<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/c36ec78b215aff7046bf8cee53a4f4b5png.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/6fe395c58cfa287a9d1ee05df55a1c73png.jpg"></p>
+<h3 id="3-6-鼠标属性"><a href="#3-6-鼠标属性" class="headerlink" title="3.6 鼠标属性"></a>3.6 鼠标属性</h3><blockquote>
+<p> CSS中可以通过鼠标指针的cursor属性设置鼠标指针的显示图形，语法格式如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor:鼠标指针样式;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>cursor属性的取值和说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>crosshair</td>
+</tr>
+<tr>
+<td>pointer</td>
+</tr>
+<tr>
+<td>wait</td>
+</tr>
+<tr>
+<td>help</td>
+</tr>
+<tr>
+<td>no-drop</td>
+</tr>
+<tr>
+<td>text</td>
+</tr>
+<tr>
+<td>move</td>
+</tr>
+<tr>
+<td>n-resize</td>
+</tr>
+</tbody></table>
+<h2 id="4-伪类和伪元素"><a href="#4-伪类和伪元素" class="headerlink" title="4 伪类和伪元素"></a>4 伪类和伪元素</h2><h3 id="4-1伪类"><a href="#4-1伪类" class="headerlink" title="4.1伪类"></a>4.1伪类</h3><blockquote>
+<p>CSS引入伪类和伪元素的概念是为了实现基于文档树之处的信息的格式化。</p>
+<p>伪类和伪元素的区别是:</p>
+<ul>
+<li>为类的操作对象是文档树中已有的元素，而伪元素创建了一个文档树之外的元素。</li>
+<li>CSS3规范中要求使用双冒号(::)表示伪元素，以此来区分伪元素和伪类。</li>
+<li>IE8及以版本的一些浏览器不兼容双冒号(::)表示方法、所以除了少部分伪元素:其余伪元素既司使用单冒号(:)，也可以使用双冒号(::)。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>伪类是一种特殊的类选择符，是能够被支持CSS的浏览器自动识别的特殊选择符.</p>
+<p>最大的用途是为超链接定义不同状态下的样式效果。</p>
+<p>伪类的语法是在原有选择符后加一个伪类，格式如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器:伪类&#123;    属性:属性值;    属性:属性值;    ......&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：伪类是在CSS中已经定义好的，不能像类选择符那样使用其他名字。</p>
+</blockquote>
+<p>常用的伪类如下:</p>
+<p>1. 表示状态</p>
+<ul>
+<li>:link: 选择未访问的链接。</li>
+<li>:visited: 选择已访问的链接。</li>
+<li>:hover:选择鼠标指针移人链接。</li>
+<li>:active: 被激活的链接，即按下鼠标左键但未松开。</li>
+<li>:focus: 选择获取焦点的输人字段。</li>
+</ul>
+<p>2. 结构化伪类</p>
+<ul>
+<li>:not:否定伪类，用于匹配不符合参数选择器的元素。</li>
+<li>:first-child: 匹配元素的第一个子元素。</li>
+<li>:last-child: 匹配元素的最后一个子元素。</li>
+<li>:first-of-type:匹配属于其父元素的首个特定类型的子元素的每个元素。</li>
+<li>:last-of-type: 匹配元素的最后一个子元素。</li>
+<li>:nth-child: 根据元素的位置匹配一个或者多个元素，并接受一个an+b形式的参数( an+b最大数为匹配元素的个数)。</li>
+<li>:nth-last-child:与:nth-child相似，不同之处在于是从最后一个子元素开始计数的。</li>
+<li>:nth-of-type:与nth-child相似，不同之处在于只匹配特定类型的元素。</li>
+<li>:nth-last-type:与nth-of-type相似，不同之处在于是从最后一个子元素开始计数的。</li>
+<li>:only-child: 当元素是其父元素中唯一一个子元素时，:only-child匹配该元素。</li>
+<li>:only-of-type: 当元素是其父元素中唯一一个特定类型的子元素时，:only-child匹C配该元素。</li>
+<li>:target: 当URL带有锚名称，指向文档内某个具体元素时，:target匹配该元素。</li>
+</ul>
+<p>3. 表单相关伪类</p>
+<ul>
+<li>:checked:匹配被选中的input元素， 这个input元素包括radio和checkbox。</li>
+<li>:default:匹配默认选中的元素，例如，提交按钮总是表单的默认按钮。</li>
+<li>:disabled:匹配禁用的表单元素。</li>
+<li>:empty: 匹配没有子元素的元素。如果元素中含有文本节点、HTML元素或者一个空格，则:empty不能匹配这个元素。</li>
+<li>:enabled: 匹配没有设置disabled属性的表单元素。</li>
+<li>:valid:匹配条件验证正确的表单元素。</li>
+<li>:invalid: 与:valid相反，匹配条件验证错误的表单元素。</li>
+<li>:optional: 匹配具有optional属性的表单元素。当表单元素没有设置为required时， 即为optional属性。</li>
+<li>:required: 匹配设置了required属性的表单元素。</li>
+</ul>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>	<span class="tag">&lt;<span class="name">title</span>&gt;</span>伪类<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;               <span class="comment">/*未访问链接*/</span>			<span class="attribute">color</span>: <span class="number">#000000</span>;		&#125;		<span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;            <span class="comment">/*已访问链接*/</span>			<span class="attribute">color</span>: <span class="number">#00FF00</span>;	    &#125;	    <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;               <span class="comment">/* 鼠标移动到连接上*/</span>	    	<span class="attribute">color</span>: <span class="number">#FF00FF</span>;	    &#125;	    <span class="selector-tag">a</span><span class="selector-pseudo">:active</span>&#123;               <span class="comment">/*鼠标单击时*/</span>	    	<span class="attribute">color</span>: <span class="number">#0000FF</span>;	    &#125;	    <span class="selector-tag">input</span><span class="selector-pseudo">:focus</span>&#123;          <span class="comment">/* input标记获得焦点时*/</span>	    	<span class="attribute">background-color</span>: yellow;	    &#125;	    <span class="selector-tag">p</span><span class="selector-pseudo">:last-child</span>&#123;          <span class="comment">/* p标记的最后一个标记*/</span>	    	<span class="attribute">font-size</span>: <span class="number">24px</span>;	    &#125; 	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span> <span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/css/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>这是一个链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">b</span>&gt;</span>注意：<span class="tag">&lt;/<span class="name">b</span>&gt;</span>	a:hover必须在a:link和a:visited之后，需要严格按顺序才能看到效果<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>注意：<span class="tag">&lt;/<span class="name">b</span>&gt;</span> a:sctive必须在a:hover之后<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>你可以使用&quot;frist-letter&quot;伪元素向文本的首字母设置特殊样式：<span class="tag">&lt;/<span class="name">p</span>&gt;</span>First name:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fname&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is some text.<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is some text.<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong> </p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/540b9b5a69dcba255b45c719451bae4cpng.jpg"></p>
+<h3 id="4-2-伪元素"><a href="#4-2-伪元素" class="headerlink" title="4.2 伪元素"></a>4.2 伪元素</h3><blockquote>
+<p>CSS的伪元素之所以被称为伪元素，是因为其不是真正的页面元素，即没有对应的HTML元素， 但是其所有用法和表现行为与真正的页面元素一样，可以对其使用如页面元素一样的CSS样式，</p>
+</blockquote>
+<p>常用的伪元素：</p>
+<ul>
+<li>:before:在某个元素之前插人一些内容。</li>
+<li>:after: 在某个元素之后插人一-些内容。</li>
+<li>:first-letter:为某个元素中文字的首字母或第一个字使用样式。</li>
+<li>:first-line:为某个元素的第一行文字使用样式。</li>
+<li>:selection:匹配被用户选中或者处于高亮状态的部分。</li>
+<li>:placeholder:匹配占位符的文本，只有元素设置了placeholder属性时，该伪元素才能生效。</li>
+</ul>
+<p><strong>例如：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span>	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>		<span class="tag">&lt;<span class="name">title</span>&gt;</span>伪元素<span class="tag">&lt;/<span class="name">title</span>&gt;</span>	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css">		<span class="selector-tag">p</span><span class="selector-class">.f1</span><span class="selector-pseudo">:first</span>-<span class="selector-tag">line</span>		&#123;			<span class="attribute">color</span>: <span class="number">#ff00ff</span>;			<span class="attribute">font-size</span>: <span class="number">24px</span>;		&#125;		<span class="selector-tag">p</span><span class="selector-class">.myClass</span><span class="selector-pseudo">:first</span>-letter		&#123;			<span class="attribute">color</span>: <span class="number">#ff0000</span>;			<span class="attribute">font-size</span>: xx-large;		&#125;		<span class="selector-tag">p</span><span class="selector-class">.youClass</span><span class="selector-pseudo">:before</span>		&#123;			<span class="attribute">content</span>: <span class="string">&quot;hello&quot;</span>;		&#125;		<span class="selector-tag">p</span><span class="selector-class">.youClass</span><span class="selector-pseudo">:after</span>		&#123;			<span class="attribute">content</span>: <span class="string">&quot;world&quot;</span>;		&#125;	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;f1&quot;</span>&gt;</span>		向文本的首行设置特殊样式<span class="tag">&lt;<span class="name">br</span>/&gt;</span>可以使用&quot;first-line&quot;伪元素	<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;myClass&quot;</span>&gt;</span>		可以使用&quot;first-line&quot;伪元素向文本的首字母设置特殊样式	<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;youClass&quot;</span>&gt;</span> hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/29aa4e71d338343797e68d910c8be1c1png.jpg"></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/d20f536c64d06e5fcf4bfe2ec5dc25d.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/d20f536c64d06e5fcf4bfe2ec5dc25d.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Smith</div><div class="post-copyright__author_desc">人生太短，要干的事太多，我要争分夺秒</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://smithhs.cn/2021/08/02/2021-08-02-CSS/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://smithhs.cn/2021/08/02/2021-08-02-CSS/')">CSS</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/1.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/1.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/2.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/2.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://smithhs.cn/2021/08/02/2021-08-02-CSS/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=CSS&amp;url=https://smithhs.cn/2021/08/02/2021-08-02-CSS/&amp;pic=https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/space-in-HTMLpng.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://smithhs.cn" target="_blank">Smith</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/CSS/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>CSS<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/redis1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/08/01/2021-08-01-HTML/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/space-in-HTML.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">HTML</div></div></a></div><div class="next-post pull-right"><a href="/2021/09/04/2021-09-04-Math/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/FurtherMathematics.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">高等数学</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-css%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">1 css基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">1.1基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E4%BC%98%E5%8A%BF"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 优势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3%E5%BA%94%E7%94%A8css%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3应用css的步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-css%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 css基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-css%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 css使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-%E5%86%85%E5%B5%8C%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 内嵌样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 内部样式</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2022 - 2024 By <a class="footer-bar-link" href="/" title="Smith" target="_blank">Smith</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/Smithhss/smithhs.github.io.git" title="Hexo">Hexo</a></div></div></div></footer></div></div></div><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/d20f536c64d06e5fcf4bfe2ec5dc25d.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">48</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">6</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于我</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8805965276" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/my/m/music/playlist?id=464586318&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn1.tianli0.top/npm/js-heo@1.0.6/translate/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.14/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js"></script><script>var meting_api = "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("07/01/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By 安知鱼 V1.5.3",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Smith 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "visitor@anheyu.com";</script><script>//动态标题
+let leaveTitle = '再看看嘛🌈！';
+let backTitle = '欢迎回来✌️！';
+let OriginTitile = document.title
+let titleTime
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = leaveTitle
+    clearTimeout(titleTime)
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = backTitle + OriginTitile
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile
+    }, 2000)
+  }
+})</script><script async data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/waterfall.js/1.1.0/waterfall.min.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片与超链接拖拽
+let aElements = document.getElementsByTagName("a");
+for (let i = 0; i < aElements.length; i++) {
+  aElements[i].setAttribute("draggable", "false");
+  let imgElements = aElements[i].getElementsByTagName("img");
+  for (let j = 0; j < imgElements.length; j++) {
+    imgElements[j].setAttribute("draggable", "false");
+  }
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+var oncontextmenuFunction = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 监听右键初始化
+window.oncontextmenu = oncontextmenuFunction
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function (url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", anzhiyu.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | Smith")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+anzhiyu.catalogActive();
+anzhiyu.tagsPageActive();
+anzhiyu.categoriesBarActive();
+anzhiyu.topCategoriesBarScroll();
+anzhiyu.switchRightClickMenuHotReview();
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);
+setTimeout(() => {if (typeof addFriendLinksInFooter === "function") {addFriendLinksInFooter();}}, 200)</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div></body></html>
