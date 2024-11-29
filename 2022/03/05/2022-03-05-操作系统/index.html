@@ -47,7 +47,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-11-19 19:46:25',
+  postUpdate: '2024-11-29 10:36:24',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -463,18 +463,17 @@ if (true) {
 <li><strong>优先级调度算法（实时）</strong><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/1f5ee84e32a7e2d4be1edc241299da77png.jpg"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/bfd871371e92a2e701e5a4231151d5c6png.jpg"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/2e6fd790d4fa7ec28267d79880c25556png.jpg"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/714ab8024c90790d55855e64913f6d20png.jpg"></li>
 <li><strong>多级反馈队列调度算法</strong><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/5c5eb4c6e669779a2ef1183704b045b0png.jpg"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/43a0ce8db7b651cfff258e6a06399c83png.jpg"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/637498aca7e7b558c01e697191f50010png.jpg"></li>
 </ul>
-<p>小结：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/4d81b03d36dfe5b3f000d2046718ff4epng.jpg"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/QQ20241129-103346.png"><br>小结：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/4d81b03d36dfe5b3f000d2046718ff4epng.jpg"></p>
 <h3 id="2-3-进程的同步与互斥"><a href="#2-3-进程的同步与互斥" class="headerlink" title="2.3 进程的同步与互斥"></a>2.3 进程的同步与互斥</h3><h4 id="2-3-1-进程的同步与互斥"><a href="#2-3-1-进程的同步与互斥" class="headerlink" title="2.3.1 进程的同步与互斥"></a>2.3.1 进程的同步与互斥</h4><p>什么是进程同步？<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/d7528bba793ab814e9e152e733351e83png.jpg"></p>
 <p>什么是进程互斥？<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/3ca7e50fa747b6611fd727bac025ae0bpng.jpg"></p>
-<p>对临界资源的互斥访问，可以在逻辑上分为如下四个部分：</p>
+<p>注意：临界区是内存中访问临界资源的代码段。进入区和退出区是负责实现互斥的代码段。临界区也可称为 “临界段”。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/bd21128a56fc5f41ff88ad54cc47166cpng.jpg"><br>对临界资源的互斥访问，可以在逻辑上分为如下四个部分：</p>
 <ul>
 <li>进入区：负责检查是否可进入临界区，若可进入，则应设置正在访问临界资源的标志（上锁），以阻止其他进程同时进入临界区</li>
 <li>临界区：访问临界区资源的那段代码</li>
 <li>退出区：负责解除正在访问临界资源的标志</li>
 <li>剩余区：做其他处理</li>
 </ul>
-<p>注意：临界区是内存中访问临界资源的代码段。进入区和退出区是负责实现互斥的代码段。临界区也可称为 “临界段”。</p>
-<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/bd21128a56fc5f41ff88ad54cc47166cpng.jpg"></p>
 <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/QQ20241104-231327.png"></p>
 <h4 id="2-3-2-进程互斥的软件实现方法（单标志、双标志先检查、双标志后检查、Peterson）"><a href="#2-3-2-进程互斥的软件实现方法（单标志、双标志先检查、双标志后检查、Peterson）" class="headerlink" title="2.3.2 进程互斥的软件实现方法（单标志、双标志先检查、双标志后检查、Peterson）"></a>2.3.2 进程互斥的软件实现方法（单标志、双标志先检查、双标志后检查、Peterson）</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/QQ20241104-231403.png"></p>
 <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://smith-1315833455.cos.ap-beijing.myqcloud.com/blog/QQ20241104-231420.png"></p>
